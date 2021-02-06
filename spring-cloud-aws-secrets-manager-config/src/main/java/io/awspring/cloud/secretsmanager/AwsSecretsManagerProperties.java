@@ -110,7 +110,7 @@ public class AwsSecretsManagerProperties implements Validator {
 		}
 		if (!PROFILE_SEPARATOR_PATTERN.matcher(properties.getProfileSeparator()).matches()) {
 			errors.rejectValue("profileSeparator", "Pattern",
-					"The profileSeparator must have pattern of:  " + PROFILE_SEPARATOR_PATTERN.toString());
+				"The profileSeparator must have pattern of:  " + PROFILE_SEPARATOR_PATTERN.toString());
 		}
 	}
 

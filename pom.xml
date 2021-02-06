@@ -135,6 +135,22 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>com.diffplug.spotless</groupId>
+					<artifactId>spotless-maven-plugin</artifactId>
+					<version>2.7.0</version>
+					<configuration>
+						<java>
+							<eclipse>
+								<file>${maven.multiModuleProjectDirectory}/eclipse-code-formatter.xml</file>
+							</eclipse>
+							<removeUnusedImports/>
+							<licenseHeader>
+								<file>${maven.multiModuleProjectDirectory}/license-header.txt</file>
+							</licenseHeader>
+						</java>
+					</configuration>
+				</plugin>
+				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<configuration>
 						<compilerArgs>
@@ -160,21 +176,8 @@
 		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>io.spring.javaformat</groupId>
-				<artifactId>spring-javaformat-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<inherited>true</inherited>
-						<goals>
-							<goal>validate</goal>
-						</goals>
-					</execution>
-				</executions>
+				<groupId>com.diffplug.spotless</groupId>
+				<artifactId>spotless-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
