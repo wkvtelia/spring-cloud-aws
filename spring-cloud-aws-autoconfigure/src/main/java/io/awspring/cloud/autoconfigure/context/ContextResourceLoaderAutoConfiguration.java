@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,8 +37,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 public class ContextResourceLoaderAutoConfiguration {
 
 	/**
-	 * The prefix used for properties related to S3 resource loading via the
-	 * ResourceLoader.
+	 * The prefix used for properties related to S3 resource loading via the ResourceLoader.
 	 */
 	public static final String AWS_LOADER_PROPERTY_PREFIX = "cloud.aws.loader";
 

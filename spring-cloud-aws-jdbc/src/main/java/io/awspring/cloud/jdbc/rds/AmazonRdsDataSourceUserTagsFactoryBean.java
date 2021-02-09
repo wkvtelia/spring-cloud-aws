@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -92,8 +92,8 @@ public class AmazonRdsDataSourceUserTagsFactoryBean extends AbstractFactoryBean<
 
 	/**
 	 * Unfortunately Amazon AWS mandates to use ARN notation to get the tags. Therefore we
-	 * first need to get the account number through the IAM service and then construct the
-	 * ARN out of the account no and region
+	 * first need to get the account number through the IAM service and then construct the ARN
+	 * out of the account no and region
 	 * @return the arn string used to query the tags
 	 */
 	private String getDbInstanceResourceName() {

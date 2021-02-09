@@ -28,8 +28,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author Alain Sahli
  */
-@SpringBootTest(
-		classes = BootNotificationMessagingTemplateIntegrationTest.NotificationMessagingTemplateIntegrationTestConfiguration.class)
+@SpringBootTest(classes = BootNotificationMessagingTemplateIntegrationTest.NotificationMessagingTemplateIntegrationTestConfiguration.class)
 class BootNotificationMessagingTemplateIntegrationTest extends NotificationMessagingTemplateIntegrationTest {
 
 	@Configuration

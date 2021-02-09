@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,16 +52,15 @@ import org.springframework.context.annotation.Import;
 public @interface EnableElastiCache {
 
 	/**
-	 * Configures the cache clusters for the caching configuration. Support one or
-	 * multiple caches
-	 * {@link io.awspring.cloud.cache.config.annotation.CacheClusterConfig} configurations
-	 * with their physical cache name (as configured in the ElastiCache service) or their
-	 * logical cache name if the caches are configured inside a stack and
-	 * {@link io.awspring.cloud.context.config.annotation.EnableStackConfiguration}
-	 * annotation is used inside the application.
+	 * Configures the cache clusters for the caching configuration. Support one or multiple
+	 * caches {@link io.awspring.cloud.cache.config.annotation.CacheClusterConfig}
+	 * configurations with their physical cache name (as configured in the ElastiCache
+	 * service) or their logical cache name if the caches are configured inside a stack and
+	 * {@link io.awspring.cloud.context.config.annotation.EnableStackConfiguration} annotation
+	 * is used inside the application.
 	 *
-	 * The CacheClusterConfig annotation also configures cache specific attributes like
-	 * the expiration time.
+	 * The CacheClusterConfig annotation also configures cache specific attributes like the
+	 * expiration time.
 	 * @return - the configured cache instances for the application.
 	 */
 	CacheClusterConfig[] value() default {};
@@ -72,18 +71,17 @@ public @interface EnableElastiCache {
 	 * Applicable only if {@link #mode()} is set to {@link AdviceMode#PROXY}</strong>.
 	 * <p>
 	 * Note that setting this attribute to {@code true} will affect <em>all</em>
-	 * Spring-managed beans requiring proxying, not just those marked with
-	 * {@code @Cacheable}. For example, other beans marked with Spring's
-	 * {@code @Transactional} annotation will be upgraded to subclass proxying at the same
-	 * time. This approach has no negative impact in practice unless one is explicitly
-	 * expecting one type of proxy vs another, e.g. in tests.
+	 * Spring-managed beans requiring proxying, not just those marked with {@code @Cacheable}.
+	 * For example, other beans marked with Spring's {@code @Transactional} annotation will be
+	 * upgraded to subclass proxying at the same time. This approach has no negative impact in
+	 * practice unless one is explicitly expecting one type of proxy vs another, e.g. in
+	 * tests.
 	 * @return whether proxy should be created around a class
 	 */
 	boolean proxyTargetClass() default false;
 
 	/**
-	 * Indicate how caching advice should be applied. The default is
-	 * {@link AdviceMode#PROXY}.
+	 * Indicate how caching advice should be applied. The default is {@link AdviceMode#PROXY}.
 	 *
 	 * @see AdviceMode
 	 * @return type of advice mode to choose
@@ -91,12 +89,11 @@ public @interface EnableElastiCache {
 	AdviceMode mode() default AdviceMode.PROXY;
 
 	/**
-	 * Configures the default expiration time in seconds if there is no custom expiration
-	 * time configuration with a
-	 * {@link io.awspring.cloud.cache.config.annotation.CacheClusterConfig} configuration
-	 * for the cache. The expiration time is implementation specific (e.g. Redis or
-	 * Memcached) and could therefore differ in the behaviour based on the cache
-	 * implementation.
+	 * Configures the default expiration time in seconds if there is no custom expiration time
+	 * configuration with a
+	 * {@link io.awspring.cloud.cache.config.annotation.CacheClusterConfig} configuration for
+	 * the cache. The expiration time is implementation specific (e.g. Redis or Memcached) and
+	 * could therefore differ in the behaviour based on the cache implementation.
 	 * @return - the default expiration time for all caches that do not contain a specific
 	 * expiration time on cache level
 	 */

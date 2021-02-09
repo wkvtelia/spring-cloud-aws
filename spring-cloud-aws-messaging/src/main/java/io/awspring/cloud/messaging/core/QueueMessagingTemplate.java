@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,14 +58,14 @@ public class QueueMessagingTemplate extends AbstractMessageChannelMessagingSendi
 	}
 
 	/**
-	 * Initializes the messaging template by configuring the resource Id resolver as well
-	 * as the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with
-	 * the default configuration to resolve destination names.
+	 * Initializes the messaging template by configuring the resource Id resolver as well as
+	 * the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with the
+	 * default configuration to resolve destination names.
 	 * @param amazonSqs The {@link AmazonSQS} client, cannot be {@code null}.
 	 * @param resourceIdResolver The {@link ResourceIdResolver} to be used for resolving
-	 * logical queue names.
+	 *     logical queue names.
 	 * @param messageConverter A {@link MessageConverter} that is going to be added to the
-	 * composite converter.
+	 *     composite converter.
 	 */
 	public QueueMessagingTemplate(AmazonSQSAsync amazonSqs, ResourceIdResolver resourceIdResolver,
 			MessageConverter messageConverter) {
@@ -73,16 +73,16 @@ public class QueueMessagingTemplate extends AbstractMessageChannelMessagingSendi
 	}
 
 	/**
-	 * Initializes the messaging template by configuring the destination resolver as well
-	 * as the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with
-	 * the default configuration to resolve destination names.
+	 * Initializes the messaging template by configuring the destination resolver as well as
+	 * the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with the
+	 * default configuration to resolve destination names.
 	 * @param amazonSqs The {@link AmazonSQS} client, cannot be {@code null}.
-	 * @param destinationResolver A destination resolver implementation to resolve queue
-	 * names into queue urls. The destination resolver will be wrapped into a
-	 * {@link org.springframework.messaging.core.CachingDestinationResolverProxy} to avoid
-	 * duplicate queue url resolutions.
+	 * @param destinationResolver A destination resolver implementation to resolve queue names
+	 *     into queue urls. The destination resolver will be wrapped into a
+	 *     {@link org.springframework.messaging.core.CachingDestinationResolverProxy} to avoid
+	 *     duplicate queue url resolutions.
 	 * @param messageConverter A {@link MessageConverter} that is going to be added to the
-	 * composite converter.
+	 *     composite converter.
 	 */
 	public QueueMessagingTemplate(AmazonSQSAsync amazonSqs, DestinationResolver<String> destinationResolver,
 			MessageConverter messageConverter) {

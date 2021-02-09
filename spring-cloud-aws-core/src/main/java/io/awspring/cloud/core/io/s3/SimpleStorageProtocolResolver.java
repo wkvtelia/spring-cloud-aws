@@ -40,8 +40,8 @@ public class SimpleStorageProtocolResolver implements ProtocolResolver, Initiali
 
 	/**
 	 * <b>IMPORTANT:</b> If a task executor is set with an unbounded queue there will be a
-	 * huge memory consumption. The reason is that each multipart of 5MB will be put in
-	 * the queue to be uploaded. Therefore a bounded queue is recommended.
+	 * huge memory consumption. The reason is that each multipart of 5MB will be put in the
+	 * queue to be uploaded. Therefore a bounded queue is recommended.
 	 */
 	private TaskExecutor taskExecutor;
 

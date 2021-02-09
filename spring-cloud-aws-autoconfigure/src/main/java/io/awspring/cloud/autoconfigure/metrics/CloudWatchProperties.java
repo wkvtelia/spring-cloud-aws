@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,8 +36,8 @@ public class CloudWatchProperties extends StepRegistryProperties {
 	private static final int DEFAULT_BATCH_SIZE = 20;
 
 	/**
-	 * The namespace which will be used when sending metrics to CloudWatch. This property
-	 * is needed and must not be null.
+	 * The namespace which will be used when sending metrics to CloudWatch. This property is
+	 * needed and must not be null.
 	 */
 	private String namespace = "";
 

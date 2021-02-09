@@ -22,8 +22,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 /**
  * @author Agim Emruli
  */
-@SpringBootTest(classes = BootResourceLoaderAwsTest.BootResourceLoaderAwsTestConfig.class,
-		properties = { "cloud.aws.loader.corePoolSize=10", "cloud.aws.loader.queueCapacity=0" })
+@SpringBootTest(classes = BootResourceLoaderAwsTest.BootResourceLoaderAwsTestConfig.class, properties = {
+		"cloud.aws.loader.corePoolSize=10", "cloud.aws.loader.queueCapacity=0" })
 class BootResourceLoaderAwsTest extends ResourceLoaderAwsTest {
 
 	@SpringBootApplication

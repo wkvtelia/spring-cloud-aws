@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -226,8 +226,7 @@ class AmazonRdsInstanceConfigurationTest {
 	}
 
 	// @checkstyle:off
-	@EnableRdsInstance(dbInstanceIdentifier = "#{environment.dbInstanceIdentifier}",
-			password = "#{environment.password}", username = "#{environment.username}")
+	@EnableRdsInstance(dbInstanceIdentifier = "#{environment.dbInstanceIdentifier}", password = "#{environment.password}", username = "#{environment.username}")
 	static class ApplicationConfigurationWithoutReadReplicaAndExpressions {
 
 		// @checkstyle:on
@@ -247,8 +246,7 @@ class AmazonRdsInstanceConfigurationTest {
 	}
 
 	// @checkstyle:off
-	@EnableRdsInstance(dbInstanceIdentifier = "${dbInstanceIdentifier}", password = "${password}",
-			username = "${username}")
+	@EnableRdsInstance(dbInstanceIdentifier = "${dbInstanceIdentifier}", password = "${password}", username = "${username}")
 	static class ApplicationConfigurationWithoutReadReplicaAndPlaceHolder {
 
 		// @checkstyle:on

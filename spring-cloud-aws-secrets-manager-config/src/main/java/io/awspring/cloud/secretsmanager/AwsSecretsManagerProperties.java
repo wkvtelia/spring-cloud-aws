@@ -52,8 +52,8 @@ public class AwsSecretsManagerProperties implements Validator {
 	private static final Pattern PROFILE_SEPARATOR_PATTERN = Pattern.compile("[a-zA-Z0-9.\\-_/\\\\]+");
 
 	/**
-	 * Prefix indicating first level for every property. Value must start with a forward
-	 * slash followed by a valid path segment or be empty. Defaults to "/secret".
+	 * Prefix indicating first level for every property. Value must start with a forward slash
+	 * followed by a valid path segment or be empty. Defaults to "/secret".
 	 */
 	private String prefix = "/secret";
 
@@ -65,8 +65,7 @@ public class AwsSecretsManagerProperties implements Validator {
 	private boolean failFast = true;
 
 	/**
-	 * If region value is not null or empty it will be used in creation of
-	 * AWSSecretsManager.
+	 * If region value is not null or empty it will be used in creation of AWSSecretsManager.
 	 */
 	private String region;
 
@@ -110,7 +109,7 @@ public class AwsSecretsManagerProperties implements Validator {
 		}
 		if (!PROFILE_SEPARATOR_PATTERN.matcher(properties.getProfileSeparator()).matches()) {
 			errors.rejectValue("profileSeparator", "Pattern",
-				"The profileSeparator must have pattern of:  " + PROFILE_SEPARATOR_PATTERN.toString());
+					"The profileSeparator must have pattern of:  " + PROFILE_SEPARATOR_PATTERN.toString());
 		}
 	}
 

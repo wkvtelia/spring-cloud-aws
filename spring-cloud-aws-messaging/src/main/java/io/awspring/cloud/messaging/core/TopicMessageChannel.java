@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,7 +60,8 @@ public class TopicMessageChannel extends AbstractMessageChannel {
 
 	private static String findNotificationSubject(Message<?> message) {
 		return message.getHeaders().containsKey(NOTIFICATION_SUBJECT_HEADER)
-				? message.getHeaders().get(NOTIFICATION_SUBJECT_HEADER).toString() : null;
+				? message.getHeaders().get(NOTIFICATION_SUBJECT_HEADER).toString()
+				: null;
 	}
 
 	@Override

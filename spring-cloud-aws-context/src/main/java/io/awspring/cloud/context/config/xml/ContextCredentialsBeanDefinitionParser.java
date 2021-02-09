@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,11 +79,11 @@ class ContextCredentialsBeanDefinitionParser extends AbstractSingleBeanDefinitio
 	 * definition instead of the direct implementation to allow property place holder to
 	 * change any place holder used for the access or secret key.
 	 * @param credentialsProviderElement - The element that contains the credentials
-	 * attributes ACCESS_KEY_ATTRIBUTE_NAME and SECRET_KEY_ATTRIBUTE_NAME
+	 *     attributes ACCESS_KEY_ATTRIBUTE_NAME and SECRET_KEY_ATTRIBUTE_NAME
 	 * @param parserContext - Used to report any errors if there is no
-	 * ACCESS_KEY_ATTRIBUTE_NAME or SECRET_KEY_ATTRIBUTE_NAME available with a valid value
-	 * @return - the bean definition with an
-	 * {@link com.amazonaws.auth.BasicAWSCredentials} class
+	 *     ACCESS_KEY_ATTRIBUTE_NAME or SECRET_KEY_ATTRIBUTE_NAME available with a valid value
+	 * @return - the bean definition with an {@link com.amazonaws.auth.BasicAWSCredentials}
+	 * class
 	 */
 	private static BeanDefinition getCredentials(Element credentialsProviderElement, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder
@@ -109,9 +109,8 @@ class ContextCredentialsBeanDefinitionParser extends AbstractSingleBeanDefinitio
 
 	/**
 	 * Returns the attribute value and reports an error if the attribute value is null or
-	 * empty. Normally the reported error leads into an exception which will be thrown
-	 * through the {@link org.springframework.beans.factory.parsing.ProblemReporter}
-	 * implementation.
+	 * empty. Normally the reported error leads into an exception which will be thrown through
+	 * the {@link org.springframework.beans.factory.parsing.ProblemReporter} implementation.
 	 * @param attribute - The name of the attribute which will be valuated
 	 * @param element - The element that contains the attribute
 	 * @param parserContext - The parser context used to report errors

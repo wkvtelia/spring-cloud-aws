@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,8 +41,8 @@ public class RdbmsRetryOperationsInterceptor extends RetryOperationsInterceptor 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RdbmsRetryOperationsInterceptor.class);
 
 	/**
-	 * Checks that there is no current transaction active. This should never happen as
-	 * this interceptor must run actually before a transaction is created, to ensure a new
+	 * Checks that there is no current transaction active. This should never happen as this
+	 * interceptor must run actually before a transaction is created, to ensure a new
 	 * transaction is started while retrying.
 	 */
 	private static void assertNoTransactionActive() {
@@ -61,7 +61,7 @@ public class RdbmsRetryOperationsInterceptor extends RetryOperationsInterceptor 
 	 * @param invocation - the method invocation that is the target of this interceptor
 	 * @return the result of the method invocation
 	 * @throws Throwable - the exception thrown by the method invocations target or a
-	 * {@link JdbcRetryException} if there is already a transaction available.
+	 *     {@link JdbcRetryException} if there is already a transaction available.
 	 */
 	@Override
 	public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -92,11 +92,11 @@ public class RdbmsRetryOperationsInterceptor extends RetryOperationsInterceptor 
 
 	/**
 	 * Returns whenever there is already a proxy running inside this thread execution. To
-	 * avoid multiple retries in the case if this bean is called by another bean which
-	 * already has a RetryOperationsInterceptor.
-	 * @return <code>true</code> if there is a
-	 * {@link org.springframework.retry.RetryContext} available inside the
-	 * {@link RetrySynchronizationManager} or <code>false</code> otherwise.
+	 * avoid multiple retries in the case if this bean is called by another bean which already
+	 * has a RetryOperationsInterceptor.
+	 * @return <code>true</code> if there is a {@link org.springframework.retry.RetryContext}
+	 * available inside the {@link RetrySynchronizationManager} or <code>false</code>
+	 * otherwise.
 	 */
 	protected boolean isRetryContextOperationActive() {
 		return RetrySynchronizationManager.getContext() != null;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,12 +61,12 @@ public class StackResourceRegistryDetectingResourceIdResolver
 	}
 
 	/**
-	 * Resolves the provided logical resource id to the corresponding physical resource
-	 * id. If the logical resource id refers to a resource part of any of the configured
-	 * stacks, the corresponding physical resource id from the stack is returned. If none
-	 * of the configured stacks contain a resource with the provided logical resource id,
-	 * or no stacks are configured at all, the logical resource id is returned as the
-	 * physical resource id.
+	 * Resolves the provided logical resource id to the corresponding physical resource id. If
+	 * the logical resource id refers to a resource part of any of the configured stacks, the
+	 * corresponding physical resource id from the stack is returned. If none of the
+	 * configured stacks contain a resource with the provided logical resource id, or no
+	 * stacks are configured at all, the logical resource id is returned as the physical
+	 * resource id.
 	 * @param logicalResourceId the logical resource id to be resolved
 	 * @return the physical resource id
 	 */

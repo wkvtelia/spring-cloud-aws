@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ class AmazonRdsRetryInterceptorBeanDefinitionParser extends AbstractSingleBeanDe
 	 * Builds the RetryOperation {@link BeanDefinition} with its collaborators.
 	 * @param element - <code>retry-interceptor Element</code>
 	 * @param parserContext - ParserContext used to query the
-	 * {@link org.springframework.beans.factory.support.BeanDefinitionRegistry}
+	 *     {@link org.springframework.beans.factory.support.BeanDefinitionRegistry}
 	 * @return Configured but non registered bean definition
 	 */
 	private static BeanDefinition buildRetryOperationDefinition(Element element, ParserContext parserContext) {

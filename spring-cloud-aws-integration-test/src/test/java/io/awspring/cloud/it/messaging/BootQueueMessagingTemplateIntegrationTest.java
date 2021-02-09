@@ -29,8 +29,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author Alain Sahli
  */
-@SpringBootTest(
-		classes = BootQueueMessagingTemplateIntegrationTest.QueueMessagingTemplateIntegrationTestConfiguration.class)
+@SpringBootTest(classes = BootQueueMessagingTemplateIntegrationTest.QueueMessagingTemplateIntegrationTestConfiguration.class)
 class BootQueueMessagingTemplateIntegrationTest extends QueueMessagingTemplateIntegrationTest {
 
 	@Configuration

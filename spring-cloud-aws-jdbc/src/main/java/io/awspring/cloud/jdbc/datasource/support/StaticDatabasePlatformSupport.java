@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ public class StaticDatabasePlatformSupport extends MapBasedDatabasePlatformSuppo
 	private final Map<DatabaseType, String> schemeNames;
 
 	/**
-	 * Populates both the {@link #driverClassNameMappings} and {@link #schemeNames} with
-	 * the configuration information.
+	 * Populates both the {@link #driverClassNameMappings} and {@link #schemeNames} with the
+	 * configuration information.
 	 */
 	public StaticDatabasePlatformSupport() {
 		this.driverClassNameMappings = getDefaultDriverClassNameMappings();

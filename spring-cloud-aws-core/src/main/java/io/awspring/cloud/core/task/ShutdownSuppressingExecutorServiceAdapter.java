@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,8 +36,8 @@ public class ShutdownSuppressingExecutorServiceAdapter extends ExecutorServiceAd
 
 	/**
 	 * Create a new SuppressingExecutorServiceAdapter, using the given target executor.
-	 * @param taskExecutor the target executor to delegate to, typically an externally
-	 * managed one
+	 * @param taskExecutor the target executor to delegate to, typically an externally managed
+	 *     one
 	 */
 	public ShutdownSuppressingExecutorServiceAdapter(TaskExecutor taskExecutor) {
 		super(taskExecutor);

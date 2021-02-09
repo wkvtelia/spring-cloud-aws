@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,13 +40,13 @@ public class AmazonRdsReadReplicaAwareDataSourceFactoryBean extends AmazonRdsDat
 	 * Constructor which retrieves all mandatory objects to allow the object to be
 	 * constructed. This are the minimal configuration options which uses defaults or no
 	 * values for all optional elements.
-	 * @param amazonRDS - The amazonRDS instance used to connect to the service. This
-	 * object will be used to actually retrieve the datasource metadata from the Amazon
-	 * RDS service.
-	 * @param dbInstanceIdentifier - the unique database instance identifier in the Amazon
-	 * RDS service
-	 * @param password - The password used to connect to the datasource. For security
-	 * reasons the password is not available in the
+	 * @param amazonRDS - The amazonRDS instance used to connect to the service. This object
+	 *     will be used to actually retrieve the datasource metadata from the Amazon RDS
+	 *     service.
+	 * @param dbInstanceIdentifier - the unique database instance identifier in the Amazon RDS
+	 *     service
+	 * @param password - The password used to connect to the datasource. For security reasons
+	 *     the password is not available in the
 	 */
 	public AmazonRdsReadReplicaAwareDataSourceFactoryBean(AmazonRDS amazonRDS, String dbInstanceIdentifier,
 			String password) {
@@ -54,15 +54,15 @@ public class AmazonRdsReadReplicaAwareDataSourceFactoryBean extends AmazonRdsDat
 	}
 
 	/**
-	 * Constructs a {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource}
-	 * data source that contains the regular data source as a default, and all
-	 * read-replicas as additional data source. The
+	 * Constructs a {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} data
+	 * source that contains the regular data source as a default, and all read-replicas as
+	 * additional data source. The
 	 * {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} is additionally
 	 * wrapped with a
-	 * {@link org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy}, because
-	 * the read-only flag is only available after the transactional context has been
-	 * established. This is only the case if the physical connection is requested after
-	 * the transaction start and not while starting a transaction.
+	 * {@link org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy}, because the
+	 * read-only flag is only available after the transactional context has been established.
+	 * This is only the case if the physical connection is requested after the transaction
+	 * start and not while starting a transaction.
 	 * @return a ReadOnlyRoutingDataSource that is wrapped with a
 	 * LazyConnectionDataSourceProxy
 	 * @throws Exception if the underlying data source setup throws any exception

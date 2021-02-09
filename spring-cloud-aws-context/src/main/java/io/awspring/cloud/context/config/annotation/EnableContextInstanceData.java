@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,9 +40,9 @@ import org.springframework.context.annotation.Import;
 public @interface EnableContextInstanceData {
 
 	/**
-	 * Allows to configure the value separator for the user data configured attributes.
-	 * These is by default the ':' character following the Spring general place holder
-	 * support {@link PlaceholderConfigurerSupport}
+	 * Allows to configure the value separator for the user data configured attributes. These
+	 * is by default the ':' character following the Spring general place holder support
+	 * {@link PlaceholderConfigurerSupport}
 	 * @return the custom configured value separator
 	 */
 	String valueSeparator() default PlaceholderConfigurerSupport.DEFAULT_VALUE_SEPARATOR;

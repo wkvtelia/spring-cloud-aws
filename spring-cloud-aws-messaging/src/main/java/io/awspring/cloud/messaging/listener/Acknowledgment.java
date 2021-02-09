@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,11 +33,11 @@ import java.util.concurrent.Future;
 public interface Acknowledgment {
 
 	/**
-	 * The call to this method acknowledges the caller that the listener method has
-	 * finished the processing of the message and triggers some implementation specific
-	 * clean up tasks like removing a message from the SQS queue.
-	 * @return a {@link Future} as the acknowledgment can involve some asynchronous
-	 * request (i.e. request to an AWS API).
+	 * The call to this method acknowledges the caller that the listener method has finished
+	 * the processing of the message and triggers some implementation specific clean up tasks
+	 * like removing a message from the SQS queue.
+	 * @return a {@link Future} as the acknowledgment can involve some asynchronous request
+	 * (i.e. request to an AWS API).
 	 */
 	Future<?> acknowledge();
 

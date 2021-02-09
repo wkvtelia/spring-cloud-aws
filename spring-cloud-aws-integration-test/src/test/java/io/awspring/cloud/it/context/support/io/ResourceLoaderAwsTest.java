@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-// CHECKSTYLE:OFF
-// Checkstyle is disabled because in test 'testUploadBigFileAndCompareChecksum'
-// there is a needed while loop without a statement inside.
-
 package io.awspring.cloud.it.context.support.io;
 
 import java.io.ByteArrayInputStream;

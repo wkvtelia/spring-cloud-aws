@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,9 @@ public final class ContextConfigurationUtils {
 		AbstractBeanDefinition beanDefinition;
 
 		if (autoDetect) {
-			beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(useDefaultRegionChain
-					? DefaultAwsRegionProviderChainDelegate.class : Ec2MetadataRegionProvider.class)
+			beanDefinition = BeanDefinitionBuilder
+					.genericBeanDefinition(useDefaultRegionChain ? DefaultAwsRegionProviderChainDelegate.class
+							: Ec2MetadataRegionProvider.class)
 					.getBeanDefinition();
 		}
 		else if (StringUtils.hasText(configuredRegion)) {

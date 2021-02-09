@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,8 +61,7 @@ public class SqlRetryPolicy implements RetryPolicy {
 			getSqlRetryAbleExceptions(), false);
 
 	/**
-	 * Holds the maximum number of retries that should be tried if an exception is
-	 * retryable.
+	 * Holds the maximum number of retries that should be tried if an exception is retryable.
 	 */
 	private int maxNumberOfRetries = 3;
 
@@ -81,22 +80,21 @@ public class SqlRetryPolicy implements RetryPolicy {
 	}
 
 	/**
-	 * Returns if this method is retryable based on the {@link RetryContext}. If there is
-	 * no Throwable registered, then this method returns <code>true</code> without
-	 * checking any further conditions. If there is a Throwable registered, this class
-	 * checks if the registered Throwable is a retryable Exception in the context of SQL
-	 * exception. If not successful, this class also checks the cause if there is a nested
-	 * retryable exception available.
+	 * Returns if this method is retryable based on the {@link RetryContext}. If there is no
+	 * Throwable registered, then this method returns <code>true</code> without checking any
+	 * further conditions. If there is a Throwable registered, this class checks if the
+	 * registered Throwable is a retryable Exception in the context of SQL exception. If not
+	 * successful, this class also checks the cause if there is a nested retryable exception
+	 * available.
 	 * <p>
 	 * Before checking exception this class checks that the current retry count (fetched
-	 * through {@link org.springframework.retry.RetryContext#getRetryCount()} is smaller
-	 * or equals to the {@link #maxNumberOfRetries}
+	 * through {@link org.springframework.retry.RetryContext#getRetryCount()} is smaller or
+	 * equals to the {@link #maxNumberOfRetries}
 	 * </p>
-	 * @param context - the retry context holding information about the retryable
-	 * operation (number of retries, throwable if any)
-	 * @return <code>true</code> if there is no throwable registered, if there is a
-	 * retryable exception and the number of maximum numbers of retries have not been
-	 * reached.
+	 * @param context - the retry context holding information about the retryable operation
+	 *     (number of retries, throwable if any)
+	 * @return <code>true</code> if there is no throwable registered, if there is a retryable
+	 * exception and the number of maximum numbers of retries have not been reached.
 	 */
 	@Override
 	public boolean canRetry(RetryContext context) {
@@ -143,16 +141,15 @@ public class SqlRetryPolicy implements RetryPolicy {
 
 	/**
 	 * Configures the maximum number of retries. This number should be a trade-off between
-	 * having enough retries to survive a database outage due to failure and a responsive
-	 * and not stalling application. The default value for the maximum number is 3.
+	 * having enough retries to survive a database outage due to failure and a responsive and
+	 * not stalling application. The default value for the maximum number is 3.
 	 * <p>
-	 * <b>Note:</b>Consider using a {@link BackOffPolicy} which ensures that there is
-	 * enough time left between the retry attempts instead of increasing this value to a
-	 * high number. The back-off policy ensures that there is a delay in between the retry
-	 * operations.
+	 * <b>Note:</b>Consider using a {@link BackOffPolicy} which ensures that there is enough
+	 * time left between the retry attempts instead of increasing this value to a high number.
+	 * The back-off policy ensures that there is a delay in between the retry operations.
 	 * </p>
-	 * @param maxNumberOfRetries - the maximum number of retries should be a positive
-	 * number, otherwise all retries will fail.
+	 * @param maxNumberOfRetries - the maximum number of retries should be a positive number,
+	 *     otherwise all retries will fail.
 	 */
 	public void setMaxNumberOfRetries(int maxNumberOfRetries) {
 		this.maxNumberOfRetries = maxNumberOfRetries;

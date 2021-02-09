@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,8 +38,8 @@ public class AwsRegionProperties {
 	/**
 	 * Configures a static region for the application. Possible regions are (currently)
 	 * us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1,
-	 * ap-southeast-1, ap-northeast-1, sa-east-1, cn-north-1 and any custom region
-	 * configured with own region meta data.
+	 * ap-southeast-1, ap-northeast-1, sa-east-1, cn-north-1 and any custom region configured
+	 * with own region meta data.
 	 */
 	private String staticRegion;
 

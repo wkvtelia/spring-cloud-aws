@@ -113,7 +113,7 @@ public class ElastiCacheCachingConfiguration implements ImportAware {
 		redisCacheFactory.setExpiryTimePerCache(getExpiryTimePerCacheFromAnnotationConfig(
 				this.annotationAttributes.getAnnotationArray(CACHE_CLUSTER_CONFIG_ATTRIBUTE_NAME)));
 		redisCacheFactory
-				.setExpiryTime(this.annotationAttributes.<Integer>getNumber(DEFAULT_EXPIRY_TIME_ATTRIBUTE_NAME));
+				.setExpiryTime(this.annotationAttributes.<Integer> getNumber(DEFAULT_EXPIRY_TIME_ATTRIBUTE_NAME));
 		return redisCacheFactory;
 	}
 
@@ -124,7 +124,7 @@ public class ElastiCacheCachingConfiguration implements ImportAware {
 		redisCacheFactory.setExpiryTimePerCache(getExpiryTimePerCacheFromAnnotationConfig(
 				this.annotationAttributes.getAnnotationArray(CACHE_CLUSTER_CONFIG_ATTRIBUTE_NAME)));
 		redisCacheFactory
-				.setExpiryTime(this.annotationAttributes.<Integer>getNumber(DEFAULT_EXPIRY_TIME_ATTRIBUTE_NAME));
+				.setExpiryTime(this.annotationAttributes.<Integer> getNumber(DEFAULT_EXPIRY_TIME_ATTRIBUTE_NAME));
 		return redisCacheFactory;
 	}
 
@@ -141,7 +141,7 @@ public class ElastiCacheCachingConfiguration implements ImportAware {
 		Map<String, Integer> expiryTimePerCache = new HashMap<>(annotationAttributes.length);
 		for (AnnotationAttributes annotationAttribute : annotationAttributes) {
 			expiryTimePerCache.put(annotationAttribute.getString("name"),
-					annotationAttribute.<Integer>getNumber("expiration"));
+					annotationAttribute.<Integer> getNumber("expiration"));
 		}
 		return expiryTimePerCache;
 	}

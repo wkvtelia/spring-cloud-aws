@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,10 +72,9 @@ class AmazonRdsDataSourceBeanDefinitionParser extends AbstractBeanDefinitionPars
 	private static final String DATABASE_NAME = "database-name";
 
 	/**
-	 * Creates a {@link io.awspring.cloud.jdbc.datasource.DataSourceFactory}
-	 * implementation. Uses the TomcatJdbcDataSourceFactory implementation and passes all
-	 * pool attributes from the xml directly to the class (through setting the bean
-	 * properties).
+	 * Creates a {@link io.awspring.cloud.jdbc.datasource.DataSourceFactory} implementation.
+	 * Uses the TomcatJdbcDataSourceFactory implementation and passes all pool attributes from
+	 * the xml directly to the class (through setting the bean properties).
 	 * @param element - The datasource element which may contain a pool-attributes element
 	 * @return - fully configured bean definition for the DataSourceFactory
 	 */

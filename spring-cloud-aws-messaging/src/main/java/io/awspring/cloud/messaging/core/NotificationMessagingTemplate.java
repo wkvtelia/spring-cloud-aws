@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -65,8 +65,8 @@ public class NotificationMessagingTemplate extends AbstractMessageChannelMessagi
 	 * Convenience method that sends a notification with the given {@literal message} and
 	 * {@literal subject} to the {@literal destination}. The {@literal subject} is sent as
 	 * header as defined in the
-	 * <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">SNS message
-	 * JSON formats</a>.
+	 * <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">SNS message JSON
+	 * formats</a>.
 	 * @param destinationName The logical name of the destination
 	 * @param message The message to send
 	 * @param subject The subject to send
@@ -80,8 +80,8 @@ public class NotificationMessagingTemplate extends AbstractMessageChannelMessagi
 	 * Convenience method that sends a notification with the given {@literal message} and
 	 * {@literal subject} to the {@literal destination}. The {@literal subject} is sent as
 	 * header as defined in the
-	 * <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">SNS message
-	 * JSON formats</a>. The configured default destination will be used.
+	 * <a href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">SNS message JSON
+	 * formats</a>. The configured default destination will be used.
 	 * @param message The message to send
 	 * @param subject The subject to send
 	 */

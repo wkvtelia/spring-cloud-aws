@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,8 +83,8 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 	}
 
 	/**
-	 * The number of milliseconds the polling thread must wait before trying to recover
-	 * when an error occurs (e.g. connection timeout). Default is 10000 milliseconds.
+	 * The number of milliseconds the polling thread must wait before trying to recover when
+	 * an error occurs (e.g. connection timeout). Default is 10000 milliseconds.
 	 * @param backOffTime in milliseconds
 	 */
 	public void setBackOffTime(long backOffTime) {
@@ -93,9 +93,9 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 
 	/**
 	 * @return The number of milliseconds the
-	 * {@link SimpleMessageListenerContainer#stop(String)} method waits for a queue to
-	 * stop before interrupting the current thread. Default value is 10000 milliseconds
-	 * (10 seconds).
+	 * {@link SimpleMessageListenerContainer#stop(String)} method waits for a queue to stop
+	 * before interrupting the current thread. Default value is 10000 milliseconds (10
+	 * seconds).
 	 */
 	public long getQueueStopTimeout() {
 		return this.queueStopTimeout;
@@ -103,8 +103,8 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 
 	/**
 	 * The number of milliseconds the {@link SimpleMessageListenerContainer#stop(String)}
-	 * method waits for a queue to stop before interrupting the current thread. Default
-	 * value is 20000 milliseconds (20 seconds).
+	 * method waits for a queue to stop before interrupting the current thread. Default value
+	 * is 20000 milliseconds (20 seconds).
 	 * @param queueStopTimeout in milliseconds
 	 */
 	public void setQueueStopTimeout(long queueStopTimeout) {
@@ -179,14 +179,13 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 	}
 
 	/**
-	 * Create a default TaskExecutor. Called if no explicit TaskExecutor has been
-	 * specified.
+	 * Create a default TaskExecutor. Called if no explicit TaskExecutor has been specified.
 	 * <p>
 	 * The default implementation builds a
-	 * {@link org.springframework.core.task.SimpleAsyncTaskExecutor} with the specified
-	 * bean name (or the class name, if no bean name specified) as thread name prefix.
-	 * @return a {@link org.springframework.core.task.SimpleAsyncTaskExecutor} configured
-	 * with the thread name prefix
+	 * {@link org.springframework.core.task.SimpleAsyncTaskExecutor} with the specified bean
+	 * name (or the class name, if no bean name specified) as thread name prefix.
+	 * @return a {@link org.springframework.core.task.SimpleAsyncTaskExecutor} configured with
+	 * the thread name prefix
 	 * @see org.springframework.core.task.SimpleAsyncTaskExecutor#SimpleAsyncTaskExecutor(String)
 	 */
 	protected AsyncTaskExecutor createDefaultTaskExecutor() {
@@ -223,9 +222,9 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 	}
 
 	/**
-	 * Stops and waits until the specified queue has stopped. If the wait timeout
-	 * specified by {@link SimpleMessageListenerContainer#getQueueStopTimeout()} is
-	 * reached, the current thread is interrupted.
+	 * Stops and waits until the specified queue has stopped. If the wait timeout specified by
+	 * {@link SimpleMessageListenerContainer#getQueueStopTimeout()} is reached, the current
+	 * thread is interrupted.
 	 * @param logicalQueueName the name as defined on the listener method
 	 */
 	public void stop(String logicalQueueName) {
@@ -262,8 +261,8 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 	}
 
 	/**
-	 * Checks if the spinning thread for the specified queue {@code logicalQueueName} is
-	 * still running (polling for new messages) or not.
+	 * Checks if the spinning thread for the specified queue {@code logicalQueueName} is still
+	 * running (polling for new messages) or not.
 	 * @param logicalQueueName the name as defined on the listener method
 	 * @return {@code true} if the spinning thread for the specified queue is running
 	 * otherwise {@code false}.
@@ -335,7 +334,8 @@ public class SimpleMessageListenerContainer extends AbstractMessageListenerConta
 							.receiveMessage(this.queueAttributes.getReceiveMessageRequest());
 
 					final List<MessageGroup> messageGroups = queueAttributes.isFifo()
-							? groupByMessageGroupId(receiveMessageResult) : groupByMessage(receiveMessageResult);
+							? groupByMessageGroupId(receiveMessageResult)
+							: groupByMessage(receiveMessageResult);
 					CountDownLatch messageBatchLatch = new CountDownLatch(messageGroups.size());
 					for (MessageGroup messageGroup : messageGroups) {
 						if (isQueueRunning(this.logicalQueueName)) {

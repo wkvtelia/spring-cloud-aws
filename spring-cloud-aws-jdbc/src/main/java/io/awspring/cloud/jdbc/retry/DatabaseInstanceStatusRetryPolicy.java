@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@ import org.springframework.util.Assert;
 public class DatabaseInstanceStatusRetryPolicy implements RetryPolicy {
 
 	/**
-	 * DB-Instance attribute name used inside the {@link RetryContext} to store the
-	 * database instance name during the retries.
+	 * DB-Instance attribute name used inside the {@link RetryContext} to store the database
+	 * instance name during the retries.
 	 */
 	private static final String DB_INSTANCE_ATTRIBUTE_NAME = "DbInstanceIdentifier";
 
@@ -68,11 +68,10 @@ public class DatabaseInstanceStatusRetryPolicy implements RetryPolicy {
 	private ResourceIdResolver resourceIdResolver;
 
 	/**
-	 * Constructs this strategy implementation with it default and mandatory
-	 * collaborators.
+	 * Constructs this strategy implementation with it default and mandatory collaborators.
 	 * @param amazonRDS - used to query the Amazon RDS service, must not be null
-	 * @param dbInstanceIdentifier - database instance for which this class should check
-	 * the state.
+	 * @param dbInstanceIdentifier - database instance for which this class should check the
+	 *     state.
 	 */
 	public DatabaseInstanceStatusRetryPolicy(AmazonRDS amazonRDS, String dbInstanceIdentifier) {
 		Assert.notNull(amazonRDS, "amazonRDS must not be null.");
@@ -81,8 +80,8 @@ public class DatabaseInstanceStatusRetryPolicy implements RetryPolicy {
 	}
 
 	/**
-	 * Configures an option. {@link io.awspring.cloud.core.env.ResourceIdResolver} to
-	 * resolve logical name to physical name
+	 * Configures an option. {@link io.awspring.cloud.core.env.ResourceIdResolver} to resolve
+	 * logical name to physical name
 	 * @param resourceIdResolver - the resourceIdResolver to be used, may be null
 	 */
 	public void setResourceIdResolver(ResourceIdResolver resourceIdResolver) {
@@ -91,12 +90,12 @@ public class DatabaseInstanceStatusRetryPolicy implements RetryPolicy {
 
 	/**
 	 * Implementation that checks if there is an exception registered through
-	 * {@link #registerThrowable(org.springframework.retry.RetryContext, Throwable)}.
-	 * Returns <code>true</code> if there is no exception registered at all and verifies
-	 * the database instance status if there is one registered.
+	 * {@link #registerThrowable(org.springframework.retry.RetryContext, Throwable)}. Returns
+	 * <code>true</code> if there is no exception registered at all and verifies the database
+	 * instance status if there is one registered.
 	 * @param context - the retry context which may contain a registered exception
-	 * @return <code>true</code> if there is no exception registered or if there is a
-	 * retry useful which is verified by the {@link InstanceStatus} enum.
+	 * @return <code>true</code> if there is no exception registered or if there is a retry
+	 * useful which is verified by the {@link InstanceStatus} enum.
 	 */
 	@Override
 	public boolean canRetry(RetryContext context) {

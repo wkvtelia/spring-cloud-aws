@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,14 +48,14 @@ public final class AmazonS3ProxyFactory {
 
 	/**
 	 * Factory-method to create a proxy using the {@link SimpleStorageRedirectInterceptor}
-	 * that supports redirects for buckets which are in a different region. This proxy
-	 * uses the amazonS3 parameter as a "prototype" and re-uses the credentials from the
-	 * passed in {@link AmazonS3} instance. Proxy implementations uses the
-	 * {@link AmazonS3ClientFactory} to create region specific clients, which are cached
-	 * by the implementation on a region basis to avoid unnecessary object creation.
+	 * that supports redirects for buckets which are in a different region. This proxy uses
+	 * the amazonS3 parameter as a "prototype" and re-uses the credentials from the passed in
+	 * {@link AmazonS3} instance. Proxy implementations uses the {@link AmazonS3ClientFactory}
+	 * to create region specific clients, which are cached by the implementation on a region
+	 * basis to avoid unnecessary object creation.
 	 * @param amazonS3 Fully configured AmazonS3 client, the client can be an immutable
-	 * instance (created by the {@link com.amazonaws.services.s3.AmazonS3ClientBuilder})
-	 * as this proxy will not change the underlying implementation.
+	 *     instance (created by the {@link com.amazonaws.services.s3.AmazonS3ClientBuilder})
+	 *     as this proxy will not change the underlying implementation.
 	 * @return AOP-Proxy that intercepts all method calls using the
 	 * {@link SimpleStorageRedirectInterceptor}
 	 */
@@ -130,15 +130,14 @@ public final class AmazonS3ProxyFactory {
 		}
 
 		/**
-		 * Builds a new S3 client based on the information from the
-		 * {@link AmazonS3Exception}. Extracts from the exception's additional details the
-		 * region and endpoint of the bucket to be redirected to.
+		 * Builds a new S3 client based on the information from the {@link AmazonS3Exception}.
+		 * Extracts from the exception's additional details the region and endpoint of the bucket
+		 * to be redirected to.
 		 *
-		 * Extracting the region from the exception is needed because the US S3 buckets
-		 * don't always return an endpoint that includes the region and
-		 * {@link AmazonS3ClientFactory} will default to us-west-2 if the hostname of the
-		 * endpoint is "s3.amazonaws.com". The us-east-1 bucket is quite likely to return
-		 * the "s3.amazonaws.com" endpoint.
+		 * Extracting the region from the exception is needed because the US S3 buckets don't
+		 * always return an endpoint that includes the region and {@link AmazonS3ClientFactory}
+		 * will default to us-west-2 if the hostname of the endpoint is "s3.amazonaws.com". The
+		 * us-east-1 bucket is quite likely to return the "s3.amazonaws.com" endpoint.
 		 */
 		private AmazonS3 buildAmazonS3ForRedirectLocation(AmazonS3 prototype, AmazonS3Exception e) {
 			try {

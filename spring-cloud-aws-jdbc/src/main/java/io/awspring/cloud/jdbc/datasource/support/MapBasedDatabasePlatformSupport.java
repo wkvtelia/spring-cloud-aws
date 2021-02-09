@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,11 +34,11 @@ public abstract class MapBasedDatabasePlatformSupport implements DatabasePlatfor
 
 	/**
 	 * Returns the driver class for the database platform.
-	 * @param databaseType - The database type used to lookup the driver class name. Must
-	 * not be null
+	 * @param databaseType - The database type used to lookup the driver class name. Must not
+	 *     be null
 	 * @return - The driver class name, is never null
 	 * @throws IllegalArgumentException if there is no driver class name available for the
-	 * DatabaseType
+	 *     DatabaseType
 	 */
 	@Override
 	public String getDriverClassNameForDatabase(DatabaseType databaseType) {
@@ -53,11 +53,11 @@ public abstract class MapBasedDatabasePlatformSupport implements DatabasePlatfor
 	 * @param databaseType - The databaseType for which the URL should be constructed.
 	 * @param hostname - The hostname without any port information used to connect to.
 	 * @param port - The port used to connect to the database
-	 * @param databaseName - The database name used to connect to. The usage is
-	 * implementation specific (e.g. for Oracle this is the SID)
+	 * @param databaseName - The database name used to connect to. The usage is implementation
+	 *     specific (e.g. for Oracle this is the SID)
 	 * @return - the database specific URL
-	 * @throws IllegalArgumentException if there is no scheme available for the database
-	 * type or if the information is not valid to construct a URL.
+	 * @throws IllegalArgumentException if there is no scheme available for the database type
+	 *     or if the information is not valid to construct a URL.
 	 */
 	@Override
 	public String getDatabaseUrlForDatabase(DatabaseType databaseType, String hostname, int port, String databaseName) {
@@ -75,16 +75,16 @@ public abstract class MapBasedDatabasePlatformSupport implements DatabasePlatfor
 	}
 
 	/**
-	 * Template method that must be implemented in order to retrieve all driver class
-	 * names for every supported database platform.
+	 * Template method that must be implemented in order to retrieve all driver class names
+	 * for every supported database platform.
 	 * @return Map containing the driver class name for every database platform
 	 */
 	protected abstract Map<DatabaseType, String> getDriverClassNameMappings();
 
 	/**
 	 * Template method that mus be implemented to get all scheme names for every supported
-	 * database platform. Scheme names are unfortunately only standardized in the root
-	 * scheme (jdbc:) but not in the sub-scheme which is database platform specific.
+	 * database platform. Scheme names are unfortunately only standardized in the root scheme
+	 * (jdbc:) but not in the sub-scheme which is database platform specific.
 	 * @return Map containing the schema (and sub-scheme) names for every support database
 	 * platform
 	 */

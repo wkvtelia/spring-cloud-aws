@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,8 +83,7 @@ public @interface SqsListener {
 	String[] value() default {};
 
 	/**
-	 * Defines the deletion policy that must be applied once the listener method was
-	 * called.
+	 * Defines the deletion policy that must be applied once the listener method was called.
 	 * @return deletion policy
 	 */
 	SqsMessageDeletionPolicy deletionPolicy() default SqsMessageDeletionPolicy.DEFAULT;

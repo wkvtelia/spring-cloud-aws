@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,8 +53,7 @@ public class AwsSecretsManagerPropertySource extends EnumerablePropertySource<AW
 
 	/**
 	 * Loads properties from the Secrets Manager secret.
-	 * @throws ResourceNotFoundException if specified secret does not exist in the
-	 * database.
+	 * @throws ResourceNotFoundException if specified secret does not exist in the database.
 	 */
 	public void init() {
 		readSecretValue(new GetSecretValueRequest().withSecretId(context));

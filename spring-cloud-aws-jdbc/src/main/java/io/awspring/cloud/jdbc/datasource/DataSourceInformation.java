@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,18 +47,17 @@ public final class DataSourceInformation {
 	private final String password;
 
 	/**
-	 * Main constructor to create this object. This constructor receives all information
-	 * to fully construct the object and to allow the implementation to be immutable.
+	 * Main constructor to create this object. This constructor receives all information to
+	 * fully construct the object and to allow the implementation to be immutable.
 	 * @param databaseType - The database type used by the datasource to connect to. This
-	 * information will be typically used to instantiate and use the particular driver
-	 * class to connect to the database platform.
-	 * @param hostName - The fully qualified hostname without any protocol or port
-	 * information (e.g. myDbServer.domain.com, localhost, 192.168.23.1)
-	 * @param port - The port used to connect to the particular database platform (eg.
-	 * 3306 as a default for mysql)
-	 * @param databaseName - The database name used to connect to the database. The
-	 * meaning is database specific for (e.g for mysql the database name, for oracle the
-	 * SID id)
+	 *     information will be typically used to instantiate and use the particular driver
+	 *     class to connect to the database platform.
+	 * @param hostName - The fully qualified hostname without any protocol or port information
+	 *     (e.g. myDbServer.domain.com, localhost, 192.168.23.1)
+	 * @param port - The port used to connect to the particular database platform (eg. 3306 as
+	 *     a default for mysql)
+	 * @param databaseName - The database name used to connect to the database. The meaning is
+	 *     database specific for (e.g for mysql the database name, for oracle the SID id)
 	 * @param userName - The username used to connect to the database
 	 * @param password - The password used to connect to the database
 	 */
@@ -79,8 +78,8 @@ public final class DataSourceInformation {
 	}
 
 	/**
-	 * Returns the database type provided by this class. Represented by an enumeration
-	 * based on the supported database platform in the AWS platform.
+	 * Returns the database type provided by this class. Represented by an enumeration based
+	 * on the supported database platform in the AWS platform.
 	 * @return - The databaseType - never null
 	 */
 	public DatabaseType getDatabaseType() {
@@ -88,8 +87,8 @@ public final class DataSourceInformation {
 	}
 
 	/**
-	 * Returns the host name which will be used to connect to the database. This is only
-	 * the hostname without any further protocol information.
+	 * Returns the host name which will be used to connect to the database. This is only the
+	 * hostname without any further protocol information.
 	 * @return - The hostname - never null
 	 */
 	public String getHostName() {
@@ -119,8 +118,8 @@ public final class DataSourceInformation {
 	}
 
 	/**
-	 * The username used to connect to the database. The user must have the right to
-	 * connect to the database.
+	 * The username used to connect to the database. The user must have the right to connect
+	 * to the database.
 	 * @return - The username never null
 	 */
 	public String getUserName() {
@@ -128,8 +127,7 @@ public final class DataSourceInformation {
 	}
 
 	/**
-	 * The password used to connect to the database. The password might be empty but not
-	 * null.
+	 * The password used to connect to the database. The password might be empty but not null.
 	 * @return - the password - never null
 	 */
 	public String getPassword() {

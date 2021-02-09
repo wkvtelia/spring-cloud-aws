@@ -62,37 +62,36 @@ public class SqsProperties extends AwsClientProperties {
 	public static class ListenerProperties {
 
 		/**
-		 * The maximum number of messages that should be retrieved during one poll to the
-		 * Amazon SQS system. This number must be a positive, non-zero number that has a
-		 * maximum number of 10. Values higher then 10 are currently not supported by the
-		 * queueing system.
+		 * The maximum number of messages that should be retrieved during one poll to the Amazon
+		 * SQS system. This number must be a positive, non-zero number that has a maximum number
+		 * of 10. Values higher then 10 are currently not supported by the queueing system.
 		 */
 		private Integer maxNumberOfMessages = 10;
 
 		/**
-		 * The duration (in seconds) that the received messages are hidden from subsequent
-		 * poll requests after being retrieved from the system.
+		 * The duration (in seconds) that the received messages are hidden from subsequent poll
+		 * requests after being retrieved from the system.
 		 */
 		private Integer visibilityTimeout;
 
 		/**
-		 * The wait timeout that the poll request will wait for new message to arrive if
-		 * the are currently no messages on the queue. Higher values will reduce poll
-		 * request to the system significantly. The value should be between 1 and 20. For
-		 * more information read the <a href=
+		 * The wait timeout that the poll request will wait for new message to arrive if the are
+		 * currently no messages on the queue. Higher values will reduce poll request to the
+		 * system significantly. The value should be between 1 and 20. For more information read
+		 * the <a href=
 		 * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">documentation</a>.
 		 */
 		private Integer waitTimeout = 20;
 
 		/**
-		 * The queue stop timeout that waits for a queue to stop before interrupting the
-		 * running thread.
+		 * The queue stop timeout that waits for a queue to stop before interrupting the running
+		 * thread.
 		 */
 		private Long queueStopTimeout;
 
 		/**
-		 * The number of milliseconds the polling thread must wait before trying to
-		 * recover when an error occurs (e.g. connection timeout).
+		 * The number of milliseconds the polling thread must wait before trying to recover when
+		 * an error occurs (e.g. connection timeout).
 		 */
 		private Long backOffTime;
 
@@ -154,8 +153,8 @@ public class SqsProperties extends AwsClientProperties {
 	public static class HandlerProperties {
 
 		/**
-		 * Configures global deletion policy used if deletion policy is not explicitly set
-		 * on {@link SqsListener}.
+		 * Configures global deletion policy used if deletion policy is not explicitly set on
+		 * {@link SqsListener}.
 		 */
 		private SqsMessageDeletionPolicy defaultDeletionPolicy = SqsMessageDeletionPolicy.NO_REDRIVE;
 

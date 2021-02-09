@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,8 +52,7 @@ public @interface EnableContextRegion {
 	 * Configures the region as a String value. The value must match to an enum defined in
 	 * {@link com.amazonaws.regions.Regions}. This attribute is a String value allowing
 	 * expressions and placeholders to be used for the region configuration.
-	 * @return - the region a constant definition, SpEL expression or placeholder
-	 * definition
+	 * @return - the region a constant definition, SpEL expression or placeholder definition
 	 */
 	String region() default "";
 
@@ -61,14 +60,12 @@ public @interface EnableContextRegion {
 	 * Configures the auto-detection of a region that should be fetched from the EC2
 	 * meta-data. Disabled by default.
 	 * @return - configures if the region should be fetched by the EC2 meta-data. Must be
-	 * false if a region is configured in the {@link EnableContextRegion#region()}
-	 * attribute.
+	 * false if a region is configured in the {@link EnableContextRegion#region()} attribute.
 	 */
 	boolean autoDetect() default false;
 
 	/**
-	 * Whether default AWS SDK region provider chain should be used when auto is set to
-	 * true.
+	 * Whether default AWS SDK region provider chain should be used when auto is set to true.
 	 * @return - if default AWS SDK region provider chain should be used for region
 	 * resolution.
 	 */

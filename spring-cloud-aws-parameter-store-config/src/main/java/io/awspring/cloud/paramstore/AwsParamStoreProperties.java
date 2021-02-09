@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,8 +51,8 @@ public class AwsParamStoreProperties implements Validator {
 	private static final Pattern PROFILE_SEPARATOR_PATTERN = Pattern.compile("[a-zA-Z0-9.\\-_/\\\\]+");
 
 	/**
-	 * Prefix indicating first level for every property. Value must start with a forward
-	 * slash followed by a valid path segment or be empty. Defaults to "/config".
+	 * Prefix indicating first level for every property. Value must start with a forward slash
+	 * followed by a valid path segment or be empty. Defaults to "/config".
 	 */
 	private String prefix = "/config";
 

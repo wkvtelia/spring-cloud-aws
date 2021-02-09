@@ -71,12 +71,11 @@ public class QueueMessageHandlerFactory {
 	}
 
 	/**
-	 * Configures the {@link DestinationResolvingMessageSendingOperations} template used
-	 * by the {@link SendToHandlerMethodReturnValueHandler} to send return values of
-	 * handler methods.
-	 * @param sendToMessagingTemplate A
-	 * {@link DestinationResolvingMessageSendingOperations} template for sending return
-	 * values of handler methods.
+	 * Configures the {@link DestinationResolvingMessageSendingOperations} template used by
+	 * the {@link SendToHandlerMethodReturnValueHandler} to send return values of handler
+	 * methods.
+	 * @param sendToMessagingTemplate A {@link DestinationResolvingMessageSendingOperations}
+	 *     template for sending return values of handler methods.
 	 */
 	public void setSendToMessagingTemplate(DestinationResolvingMessageSendingOperations<?> sendToMessagingTemplate) {
 		this.sendToMessagingTemplate = sendToMessagingTemplate;
@@ -89,9 +88,9 @@ public class QueueMessageHandlerFactory {
 	/**
 	 * <p>
 	 * Sets the {@link AmazonSQS} client that is going to be used to create a new
-	 * {@link QueueMessagingTemplate} if {@code sendToMessagingTemplate} is {@code null}.
-	 * This template is used by the {@link SendToHandlerMethodReturnValueHandler} to send
-	 * the return values of handler methods annotated with
+	 * {@link QueueMessagingTemplate} if {@code sendToMessagingTemplate} is {@code null}. This
+	 * template is used by the {@link SendToHandlerMethodReturnValueHandler} to send the
+	 * return values of handler methods annotated with
 	 * {@link org.springframework.messaging.handler.annotation.SendTo}.
 	 * </p>
 	 * <p>
@@ -99,7 +98,7 @@ public class QueueMessageHandlerFactory {
 	 * {@code null}.
 	 * </p>
 	 * @param amazonSqs The {@link AmazonSQS} client that is going to be used by the
-	 * {@link SendToHandlerMethodReturnValueHandler} to send messages.
+	 *     {@link SendToHandlerMethodReturnValueHandler} to send messages.
 	 */
 	public void setAmazonSqs(AmazonSQSAsync amazonSqs) {
 		this.amazonSqs = amazonSqs;
@@ -107,9 +106,9 @@ public class QueueMessageHandlerFactory {
 
 	/**
 	 * Configures global deletion Policy.
-	 * @param sqsMessageDeletionPolicy if set it will use SqsMessageDeletionPolicy param
-	 * as global default value only if SqsMessageDeletionPolicy is omitted
-	 * from @SqsListener annotation. Should not be null.
+	 * @param sqsMessageDeletionPolicy if set it will use SqsMessageDeletionPolicy param as
+	 *     global default value only if SqsMessageDeletionPolicy is omitted from @SqsListener
+	 *     annotation. Should not be null.
 	 */
 	public void setSqsMessageDeletionPolicy(final SqsMessageDeletionPolicy sqsMessageDeletionPolicy) {
 		this.sqsMessageDeletionPolicy = sqsMessageDeletionPolicy;
@@ -118,9 +117,9 @@ public class QueueMessageHandlerFactory {
 	/**
 	 * This value is only used if no {@code sendToMessagingTemplate} has been set.
 	 * @param resourceIdResolver the resourceIdResolver to use for resolving logical to
-	 * physical ids in a CloudFormation environment. This resolver will be used by the
-	 * {@link QueueMessagingTemplate} created for the
-	 * {@link SendToHandlerMethodReturnValueHandler}.
+	 *     physical ids in a CloudFormation environment. This resolver will be used by the
+	 *     {@link QueueMessagingTemplate} created for the
+	 *     {@link SendToHandlerMethodReturnValueHandler}.
 	 */
 	public void setResourceIdResolver(ResourceIdResolver resourceIdResolver) {
 		this.resourceIdResolver = resourceIdResolver;
@@ -131,7 +130,7 @@ public class QueueMessageHandlerFactory {
 	 * placeholder for {@link org.springframework.messaging.handler.annotation.SendTo}
 	 * annotations. If not set, then no expressions or place holders will be resolved.
 	 * @param beanFactory - the bean factory used to resolve expressions and / or place
-	 * holders
+	 *     holders
 	 */
 	public void setBeanFactory(BeanFactory beanFactory) {
 		this.beanFactory = beanFactory;
@@ -139,8 +138,8 @@ public class QueueMessageHandlerFactory {
 
 	/**
 	 * Configures an {@link ObjectMapper} that is used by default
-	 * {@link MappingJackson2MessageConverter} created if no {@link #messageConverters}
-	 * are set.
+	 * {@link MappingJackson2MessageConverter} created if no {@link #messageConverters} are
+	 * set.
 	 * @param objectMapper - object mapper, can be null
 	 */
 	public void setObjectMapper(ObjectMapper objectMapper) {
@@ -189,8 +188,8 @@ public class QueueMessageHandlerFactory {
 
 	/**
 	 * Configures a {@link MessageConverter}s that should be used to deserialize incoming
-	 * message payloads and serialize messages in {@link QueueMessagingTemplate}. If not
-	 * set, default {@link MappingJackson2MessageConverter} is used.
+	 * message payloads and serialize messages in {@link QueueMessagingTemplate}. If not set,
+	 * default {@link MappingJackson2MessageConverter} is used.
 	 * @param messageConverters - the converters used for message conversion
 	 */
 	public void setMessageConverters(List<MessageConverter> messageConverters) {

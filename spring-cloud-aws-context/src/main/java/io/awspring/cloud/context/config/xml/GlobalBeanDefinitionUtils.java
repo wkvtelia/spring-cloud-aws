@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,14 +42,14 @@ public final class GlobalBeanDefinitionUtils {
 	}
 
 	/**
-	 * Returns the name of the resource id resolver bean. This method is provided as
-	 * utility method for bean definition parsers that create bean definitions with a
-	 * dependency to the global resource id resolver bean. If the resource id resolver
-	 * bean of type {@link ResourceIdResolver} has not yet been registered with the
-	 * provided bean definition registry, it is automatically registered.
+	 * Returns the name of the resource id resolver bean. This method is provided as utility
+	 * method for bean definition parsers that create bean definitions with a dependency to
+	 * the global resource id resolver bean. If the resource id resolver bean of type
+	 * {@link ResourceIdResolver} has not yet been registered with the provided bean
+	 * definition registry, it is automatically registered.
 	 * @param registry the bean definition registry to check for an existing resource id
-	 * resolver bean definition, and to register the resource id resolver bean definition
-	 * with, if needed
+	 *     resolver bean definition, and to register the resource id resolver bean definition
+	 *     with, if needed
 	 * @return the bean name of the resource id resolver bean
 	 */
 	@SuppressWarnings("SameReturnValue")

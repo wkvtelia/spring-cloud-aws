@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2019 the original author or authors.
+ * Copyright 2013-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,8 +57,8 @@ public class SimpleMessageListenerContainerFactory {
 	private Long backOffTime;
 
 	/**
-	 * Configures the {@link TaskExecutor} which is used to poll messages and execute them
-	 * by calling the handler methods. If no {@link TaskExecutor} is set, a default one is
+	 * Configures the {@link TaskExecutor} which is used to poll messages and execute them by
+	 * calling the handler methods. If no {@link TaskExecutor} is set, a default one is
 	 * created.
 	 * @param taskExecutor The {@link TaskExecutor} used by the container
 	 * @see SimpleMessageListenerContainer#createDefaultTaskExecutor()
@@ -68,10 +68,10 @@ public class SimpleMessageListenerContainerFactory {
 	}
 
 	/**
-	 * Configure the maximum number of messages that should be retrieved during one poll
-	 * to the Amazon SQS system. This number must be a positive, non-zero number that has
-	 * a maximum number of 10. Values higher then 10 are currently not supported by the
-	 * queueing system.
+	 * Configure the maximum number of messages that should be retrieved during one poll to
+	 * the Amazon SQS system. This number must be a positive, non-zero number that has a
+	 * maximum number of 10. Values higher then 10 are currently not supported by the queueing
+	 * system.
 	 * @param maxNumberOfMessages the maximum number of messages (between 1-10)
 	 */
 	public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
@@ -88,10 +88,10 @@ public class SimpleMessageListenerContainerFactory {
 	}
 
 	/**
-	 * Configures the wait timeout that the poll request will wait for new message to
-	 * arrive if the are currently no messages on the queue. Higher values will reduce
-	 * poll request to the system significantly. The value should be between 1 and 20. For
-	 * more information read the <a href=
+	 * Configures the wait timeout that the poll request will wait for new message to arrive
+	 * if the are currently no messages on the queue. Higher values will reduce poll request
+	 * to the system significantly. The value should be between 1 and 20. For more information
+	 * read the <a href=
 	 * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">documentation</a>.
 	 * @param waitTimeOut - the wait time out in seconds
 	 */
@@ -100,8 +100,8 @@ public class SimpleMessageListenerContainerFactory {
 	}
 
 	/**
-	 * Configures the queue stop timeout that waits for a queue to stop before
-	 * interrupting the running thread.
+	 * Configures the queue stop timeout that waits for a queue to stop before interrupting
+	 * the running thread.
 	 * @param queueStopTimeout in milliseconds
 	 */
 	public void setQueueStopTimeout(Long queueStopTimeout) {
@@ -122,8 +122,8 @@ public class SimpleMessageListenerContainerFactory {
 	}
 
 	/**
-	 * Sets the {@link AmazonSQSAsync} that is going to be used by the container to
-	 * interact with the messaging (SQS) API.
+	 * Sets the {@link AmazonSQSAsync} that is going to be used by the container to interact
+	 * with the messaging (SQS) API.
 	 * @param amazonSqs The {@link AmazonSQSAsync}, must not be {@code null}.
 	 */
 	public void setAmazonSqs(AmazonSQSAsync amazonSqs) {
@@ -140,11 +140,11 @@ public class SimpleMessageListenerContainerFactory {
 	 * messages.
 	 * <p>
 	 * <b>NOTE</b>: It is rather unlikely that the {@link QueueMessageHandler} must be
-	 * configured with this setter. Consider using the {@link QueueMessageHandlerFactory}
-	 * to configure the {@link QueueMessageHandler} before using this setter.
+	 * configured with this setter. Consider using the {@link QueueMessageHandlerFactory} to
+	 * configure the {@link QueueMessageHandler} before using this setter.
 	 * </p>
 	 * @param messageHandler the {@link QueueMessageHandler} that must be used by the
-	 * container, must not be {@code null}.
+	 *     container, must not be {@code null}.
 	 * @see QueueMessageHandlerFactory
 	 */
 	public void setQueueMessageHandler(QueueMessageHandler messageHandler) {
@@ -159,7 +159,7 @@ public class SimpleMessageListenerContainerFactory {
 	/**
 	 * This value must be set if no destination resolver has been set.
 	 * @param resourceIdResolver the resourceIdResolver to use for resolving logical to
-	 * physical ids in a CloudFormation environment. Must not be null.
+	 *     physical ids in a CloudFormation environment. Must not be null.
 	 */
 	public void setResourceIdResolver(ResourceIdResolver resourceIdResolver) {
 		this.resourceIdResolver = resourceIdResolver;
@@ -168,8 +168,8 @@ public class SimpleMessageListenerContainerFactory {
 	/**
 	 * Configures the destination resolver used to retrieve the queue url based on the
 	 * destination name configured for this instance. <br>
-	 * This setter can be used when a custom configured {@link DestinationResolver} must
-	 * be provided. (For example if one want to have the
+	 * This setter can be used when a custom configured {@link DestinationResolver} must be
+	 * provided. (For example if one want to have the
 	 * {@link io.awspring.cloud.messaging.support.destination.DynamicQueueUrlDestinationResolver}
 	 * with the auto creation of queues set to {@code true}.
 	 * @param destinationResolver another or customized {@link DestinationResolver}
@@ -187,9 +187,8 @@ public class SimpleMessageListenerContainerFactory {
 	}
 
 	/**
-	 * The number of milliseconds the polling thread must wait before trying to recover
-	 * when an error occurs (e.g. connection timeout). Default value is 10000
-	 * milliseconds.
+	 * The number of milliseconds the polling thread must wait before trying to recover when
+	 * an error occurs (e.g. connection timeout). Default value is 10000 milliseconds.
 	 * @param backOffTime in milliseconds
 	 */
 	public void setBackOffTime(Long backOffTime) {
