@@ -28,9 +28,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.env.Environment;
 
 /**
- * Secrets from the Secret Manager are added to the {@link Environment} and can be
- * retrieved using: - {@link Value} annotation - {@link Environment#getProperty(String)} -
- * or bound to {@link ConfigurationProperties} annotated classes.
+ * Secrets from the Secret Manager are added to the {@link Environment} and can
+ * be retrieved using: - {@link Value} annotation -
+ * {@link Environment#getProperty(String)} - or bound to
+ * {@link ConfigurationProperties} annotated classes.
  *
  * @author Maciej Walkowiak
  */

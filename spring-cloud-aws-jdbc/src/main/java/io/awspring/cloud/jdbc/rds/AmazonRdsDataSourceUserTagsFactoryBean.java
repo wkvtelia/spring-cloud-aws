@@ -91,9 +91,9 @@ public class AmazonRdsDataSourceUserTagsFactoryBean extends AbstractFactoryBean<
 	}
 
 	/**
-	 * Unfortunately Amazon AWS mandates to use ARN notation to get the tags. Therefore we
-	 * first need to get the account number through the IAM service and then construct the ARN
-	 * out of the account no and region
+	 * Unfortunately Amazon AWS mandates to use ARN notation to get the tags.
+	 * Therefore we first need to get the account number through the IAM service and
+	 * then construct the ARN out of the account no and region
 	 * @return the arn string used to query the tags
 	 */
 	private String getDbInstanceResourceName() {

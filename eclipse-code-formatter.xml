@@ -160,7 +160,7 @@
 		<setting
 			id="org.eclipse.jdt.core.formatter.insert_space_before_opening_brace_in_switch"
 			value="insert"/>
-		<setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="90"/>
+		<setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="80"/>
 		<setting id="org.eclipse.jdt.core.formatter.disabling_tag"
 				 value="@formatter:off"/>
 		<setting id="org.eclipse.jdt.core.formatter.use_on_off_tags" value="true"/>

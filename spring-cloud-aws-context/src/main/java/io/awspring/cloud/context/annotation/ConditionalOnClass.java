@@ -27,7 +27,8 @@ import org.springframework.context.annotation.Conditional;
 /**
  * Condition that checks if a class is available. Duplicates the features of
  * org.springframework.boot.autoconfigure.condition.ConditionalOnClass, but this
- * annotation allows to be independent of Spring Boot classes inside the context module.
+ * annotation allows to be independent of Spring Boot classes inside the context
+ * module.
  *
  * @author Agim Emruli
  */

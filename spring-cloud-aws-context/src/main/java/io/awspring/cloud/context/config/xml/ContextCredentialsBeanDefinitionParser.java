@@ -35,8 +35,8 @@ import org.springframework.util.xml.DomUtils;
 import static io.awspring.cloud.core.config.AmazonWebserviceClientConfigurationUtils.replaceDefaultCredentialsProvider;
 
 /**
- * {@link org.springframework.beans.factory.xml.BeanDefinitionParser} implementation which
- * parses the &lt;context-credentials/&gt; Element.
+ * {@link org.springframework.beans.factory.xml.BeanDefinitionParser}
+ * implementation which parses the &lt;context-credentials/&gt; Element.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -75,15 +75,16 @@ class ContextCredentialsBeanDefinitionParser extends AbstractSingleBeanDefinitio
 	}
 
 	/**
-	 * Creates a bean definition for the credentials object. This methods creates a bean
-	 * definition instead of the direct implementation to allow property place holder to
-	 * change any place holder used for the access or secret key.
+	 * Creates a bean definition for the credentials object. This methods creates a
+	 * bean definition instead of the direct implementation to allow property place
+	 * holder to change any place holder used for the access or secret key.
 	 * @param credentialsProviderElement - The element that contains the credentials
 	 *     attributes ACCESS_KEY_ATTRIBUTE_NAME and SECRET_KEY_ATTRIBUTE_NAME
 	 * @param parserContext - Used to report any errors if there is no
-	 *     ACCESS_KEY_ATTRIBUTE_NAME or SECRET_KEY_ATTRIBUTE_NAME available with a valid value
-	 * @return - the bean definition with an {@link com.amazonaws.auth.BasicAWSCredentials}
-	 * class
+	 *     ACCESS_KEY_ATTRIBUTE_NAME or SECRET_KEY_ATTRIBUTE_NAME available with a
+	 *     valid value
+	 * @return - the bean definition with an
+	 * {@link com.amazonaws.auth.BasicAWSCredentials} class
 	 */
 	private static BeanDefinition getCredentials(Element credentialsProviderElement, ParserContext parserContext) {
 		BeanDefinitionBuilder builder = BeanDefinitionBuilder
@@ -108,9 +109,11 @@ class ContextCredentialsBeanDefinitionParser extends AbstractSingleBeanDefinitio
 	}
 
 	/**
-	 * Returns the attribute value and reports an error if the attribute value is null or
-	 * empty. Normally the reported error leads into an exception which will be thrown through
-	 * the {@link org.springframework.beans.factory.parsing.ProblemReporter} implementation.
+	 * Returns the attribute value and reports an error if the attribute value is
+	 * null or empty. Normally the reported error leads into an exception which will
+	 * be thrown through the
+	 * {@link org.springframework.beans.factory.parsing.ProblemReporter}
+	 * implementation.
 	 * @param attribute - The name of the attribute which will be valuated
 	 * @param element - The element that contains the attribute
 	 * @param parserContext - The parser context used to report errors

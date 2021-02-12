@@ -32,8 +32,8 @@ public class AwsStackProperties {
 	private boolean auto = true;
 
 	/**
-	 * The name of the manually configured stack name that will be used to retrieve the
-	 * resources.
+	 * The name of the manually configured stack name that will be used to retrieve
+	 * the resources.
 	 */
 	private String name;
 

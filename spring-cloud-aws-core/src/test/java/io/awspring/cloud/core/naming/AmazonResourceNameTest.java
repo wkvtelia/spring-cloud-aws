@@ -26,8 +26,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
- * Test for {@link AmazonResourceName} class. The examples are taken from the aws
- * documentation at
+ * Test for {@link AmazonResourceName} class. The examples are taken from the
+ * aws documentation at
  * https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html
  *
  * @author Agim Emruli

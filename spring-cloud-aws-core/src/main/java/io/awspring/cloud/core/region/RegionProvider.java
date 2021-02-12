@@ -19,12 +19,12 @@ package io.awspring.cloud.core.region;
 import com.amazonaws.regions.Region;
 
 /**
- * Provider that can be used to retrieve the configured {@link Region}. A region can be
- * typically configured on application or component level and defines which Region will be
- * used to access the services. Implementation of this interfaces might be simple static
- * region configuration which is feasible for single location applications, or dynamic
- * regions which can fetched from the execution environment where the application is
- * currently running.
+ * Provider that can be used to retrieve the configured {@link Region}. A region
+ * can be typically configured on application or component level and defines
+ * which Region will be used to access the services. Implementation of this
+ * interfaces might be simple static region configuration which is feasible for
+ * single location applications, or dynamic regions which can fetched from the
+ * execution environment where the application is currently running.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -32,9 +32,10 @@ import com.amazonaws.regions.Region;
 public interface RegionProvider {
 
 	/**
-	 * Returns the region which should be used to access the services. The possible return
-	 * values are already defined in the {@link Region} enumeration.
-	 * @return the region which might be statically configured or dynamically fetched
+	 * Returns the region which should be used to access the services. The possible
+	 * return values are already defined in the {@link Region} enumeration.
+	 * @return the region which might be statically configured or dynamically
+	 * fetched
 	 */
 	Region getRegion();
 

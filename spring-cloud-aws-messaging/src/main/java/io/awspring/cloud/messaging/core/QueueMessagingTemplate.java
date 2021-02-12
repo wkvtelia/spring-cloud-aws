@@ -31,14 +31,16 @@ import org.springframework.messaging.core.DestinationResolver;
 import org.springframework.messaging.core.DestinationResolvingMessageReceivingOperations;
 
 /**
- * <b>IMPORTANT</b>: For the message conversion this class always tries to first use the
- * {@link StringMessageConverter} as it fits the underlying message channel type. If a
- * message converter is set through the constructor then it is added to a composite
- * converter already containing the {@link StringMessageConverter}. If
- * {@link QueueMessagingTemplate#setMessageConverter(MessageConverter)} is used, then the
- * {@link CompositeMessageConverter} containing the {@link StringMessageConverter} will
- * not be used anymore and the {@code String} payloads are also going to be converted with
- * the set converter.
+ * <b>IMPORTANT</b>: For the message conversion this class always tries to first
+ * use the {@link StringMessageConverter} as it fits the underlying message
+ * channel type. If a message converter is set through the constructor then it
+ * is added to a composite converter already containing the
+ * {@link StringMessageConverter}. If
+ * {@link QueueMessagingTemplate#setMessageConverter(MessageConverter)} is used,
+ * then the {@link CompositeMessageConverter} containing the
+ * {@link StringMessageConverter} will not be used anymore and the
+ * {@code String} payloads are also going to be converted with the set
+ * converter.
  *
  * @author Agim Emruli
  * @author Alain Sahli
@@ -58,14 +60,15 @@ public class QueueMessagingTemplate extends AbstractMessageChannelMessagingSendi
 	}
 
 	/**
-	 * Initializes the messaging template by configuring the resource Id resolver as well as
-	 * the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with the
-	 * default configuration to resolve destination names.
+	 * Initializes the messaging template by configuring the resource Id resolver as
+	 * well as the message converter. Uses the
+	 * {@link DynamicQueueUrlDestinationResolver} with the default configuration to
+	 * resolve destination names.
 	 * @param amazonSqs The {@link AmazonSQS} client, cannot be {@code null}.
-	 * @param resourceIdResolver The {@link ResourceIdResolver} to be used for resolving
-	 *     logical queue names.
-	 * @param messageConverter A {@link MessageConverter} that is going to be added to the
-	 *     composite converter.
+	 * @param resourceIdResolver The {@link ResourceIdResolver} to be used for
+	 *     resolving logical queue names.
+	 * @param messageConverter A {@link MessageConverter} that is going to be added
+	 *     to the composite converter.
 	 */
 	public QueueMessagingTemplate(AmazonSQSAsync amazonSqs, ResourceIdResolver resourceIdResolver,
 			MessageConverter messageConverter) {
@@ -73,16 +76,18 @@ public class QueueMessagingTemplate extends AbstractMessageChannelMessagingSendi
 	}
 
 	/**
-	 * Initializes the messaging template by configuring the destination resolver as well as
-	 * the message converter. Uses the {@link DynamicQueueUrlDestinationResolver} with the
-	 * default configuration to resolve destination names.
+	 * Initializes the messaging template by configuring the destination resolver as
+	 * well as the message converter. Uses the
+	 * {@link DynamicQueueUrlDestinationResolver} with the default configuration to
+	 * resolve destination names.
 	 * @param amazonSqs The {@link AmazonSQS} client, cannot be {@code null}.
-	 * @param destinationResolver A destination resolver implementation to resolve queue names
-	 *     into queue urls. The destination resolver will be wrapped into a
-	 *     {@link org.springframework.messaging.core.CachingDestinationResolverProxy} to avoid
-	 *     duplicate queue url resolutions.
-	 * @param messageConverter A {@link MessageConverter} that is going to be added to the
-	 *     composite converter.
+	 * @param destinationResolver A destination resolver implementation to resolve
+	 *     queue names into queue urls. The destination resolver will be wrapped
+	 *     into a
+	 *     {@link org.springframework.messaging.core.CachingDestinationResolverProxy}
+	 *     to avoid duplicate queue url resolutions.
+	 * @param messageConverter A {@link MessageConverter} that is going to be added
+	 *     to the composite converter.
 	 */
 	public QueueMessagingTemplate(AmazonSQSAsync amazonSqs, DestinationResolver<String> destinationResolver,
 			MessageConverter messageConverter) {

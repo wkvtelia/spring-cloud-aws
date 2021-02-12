@@ -25,9 +25,10 @@ import com.amazonaws.util.EC2MetadataUtils.InstanceInfo;
 import org.springframework.util.Assert;
 
 /**
- * {@link io.awspring.cloud.core.region.RegionProvider} implementation that dynamically
- * retrieves the region with the EC2 meta-data. This implementation allows application to
- * run against their region without any further configuration.
+ * {@link io.awspring.cloud.core.region.RegionProvider} implementation that
+ * dynamically retrieves the region with the EC2 meta-data. This implementation
+ * allows application to run against their region without any further
+ * configuration.
  *
  * @author Agim Emruli
  * @author Gleb Schukin

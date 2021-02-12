@@ -43,9 +43,9 @@ import org.springframework.util.Assert;
 
 /**
  * Abstract base class for message listener containers providing basic lifecycle
- * capabilities and collaborator for the concrete sub classes. This class implements all
- * lifecycle and configuration specific interface used by the Spring container to create,
- * initialize and start the container.
+ * capabilities and collaborator for the concrete sub classes. This class
+ * implements all lifecycle and configuration specific interface used by the
+ * Spring container to create, initialize and start the container.
  *
  * @author Agim Emruli
  * @author Alain Sahli
@@ -92,8 +92,8 @@ abstract class AbstractMessageListenerContainer
 	private ResourceIdResolver resourceIdResolver;
 
 	/**
-	 * By default sets the maximum value for long polling in SQS. For more information read
-	 * the <a href=
+	 * By default sets the maximum value for long polling in SQS. For more
+	 * information read the <a href=
 	 * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">documentation</a>
 	 */
 	private Integer waitTimeOut = DEFAULT_WAIT_TIME_IN_SECONDS;
@@ -133,10 +133,10 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configures the mandatory {@link AmazonSQS} client for this instance. <b>Note:</b>The
-	 * configured instance should have a buffering amazon SQS instance (see subclasses)
-	 * functionality to improve the performance during message reception and deletion on the
-	 * queueing system.
+	 * Configures the mandatory {@link AmazonSQS} client for this instance.
+	 * <b>Note:</b>The configured instance should have a buffering amazon SQS
+	 * instance (see subclasses) functionality to improve the performance during
+	 * message reception and deletion on the queueing system.
 	 * @param amazonSqs the amazon sqs instance. Must not be null
 	 */
 	public void setAmazonSqs(AmazonSQSAsync amazonSqs) {
@@ -148,12 +148,12 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configures the destination resolver used to retrieve the queue url based on the
-	 * destination name configured for this instance. <br>
-	 * This setter can be used when a custom configured {@link DestinationResolver} must be
-	 * provided. (For example if one want to have the
-	 * {@link DynamicQueueUrlDestinationResolver} with the auto creation of queues set to
-	 * {@code true}.
+	 * Configures the destination resolver used to retrieve the queue url based on
+	 * the destination name configured for this instance. <br>
+	 * This setter can be used when a custom configured {@link DestinationResolver}
+	 * must be provided. (For example if one want to have the
+	 * {@link DynamicQueueUrlDestinationResolver} with the auto creation of queues
+	 * set to {@code true}.
 	 * @param destinationResolver - the destination resolver. Must not be null
 	 */
 	public void setDestinationResolver(DestinationResolver<String> destinationResolver) {
@@ -174,10 +174,10 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configure the maximum number of messages that should be retrieved during one poll to
-	 * the Amazon SQS system. This number must be a positive, non-zero number that has a
-	 * maximum number of 10. Values higher then 10 are currently not supported by the queueing
-	 * system.
+	 * Configure the maximum number of messages that should be retrieved during one
+	 * poll to the Amazon SQS system. This number must be a positive, non-zero
+	 * number that has a maximum number of 10. Values higher then 10 are currently
+	 * not supported by the queueing system.
 	 * @param maxNumberOfMessages the maximum number of messages (between 1-10)
 	 */
 	public void setMaxNumberOfMessages(Integer maxNumberOfMessages) {
@@ -189,8 +189,8 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configures the duration (in seconds) that the received messages are hidden from
-	 * subsequent poll requests after being retrieved from the system.
+	 * Configures the duration (in seconds) that the received messages are hidden
+	 * from subsequent poll requests after being retrieved from the system.
 	 * @param visibilityTimeout the visibility timeout in seconds
 	 */
 	public void setVisibilityTimeout(Integer visibilityTimeout) {
@@ -199,8 +199,8 @@ abstract class AbstractMessageListenerContainer
 
 	/**
 	 * This value must be set if no destination resolver has been set.
-	 * @param resourceIdResolver the resourceIdResolver to use for resolving logical to
-	 *     physical ids in a CloudFormation environment. Must not be null.
+	 * @param resourceIdResolver the resourceIdResolver to use for resolving logical
+	 *     to physical ids in a CloudFormation environment. Must not be null.
 	 */
 	@RuntimeUse
 	public void setResourceIdResolver(ResourceIdResolver resourceIdResolver) {
@@ -212,9 +212,9 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configures the wait timeout that the poll request will wait for new message to arrive
-	 * if the are currently no messages on the queue. Higher values will reduce poll request
-	 * to the system significantly.
+	 * Configures the wait timeout that the poll request will wait for new message
+	 * to arrive if the are currently no messages on the queue. Higher values will
+	 * reduce poll request to the system significantly.
 	 * @param waitTimeOut - the wait time out in seconds
 	 */
 	public void setWaitTimeOut(Integer waitTimeOut) {
@@ -227,7 +227,8 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configures if this container should be automatically started. The default value is true
+	 * Configures if this container should be automatically started. The default
+	 * value is true
 	 * @param autoStartup - false if the container will be manually started
 	 */
 	public void setAutoStartup(boolean autoStartup) {
@@ -246,8 +247,8 @@ abstract class AbstractMessageListenerContainer
 	}
 
 	/**
-	 * Configure a custom phase for the container to start. This allows to start other beans
-	 * that also implements the {@link SmartLifecycle} interface.
+	 * Configure a custom phase for the container to start. This allows to start
+	 * other beans that also implements the {@link SmartLifecycle} interface.
 	 * @param phase - the phase that defines the phase respecting the
 	 *     {@link org.springframework.core.Ordered} semantics
 	 */

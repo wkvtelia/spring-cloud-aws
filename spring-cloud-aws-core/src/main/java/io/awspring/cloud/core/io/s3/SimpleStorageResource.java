@@ -61,8 +61,8 @@ import org.springframework.core.task.support.ExecutorServiceAdapter;
 
 /**
  * {@link org.springframework.core.io.Resource} implementation for
- * {@code com.amazonaws.services.s3.model.S3Object} handles. Implements the extended
- * {@link WritableResource} interface.
+ * {@code com.amazonaws.services.s3.model.S3Object} handles. Implements the
+ * extended {@link WritableResource} interface.
  *
  * @author Agim Emruli
  * @author Alain Sahli

@@ -26,15 +26,16 @@ import com.amazonaws.regions.AwsRegionProviderChain;
 import org.springframework.context.annotation.Import;
 
 /**
- * Configures a {@link io.awspring.cloud.core.region.RegionProvider} instance for the
- * application context. The region provider will be used for all Amazon Web Service
- * clients that are created inside the application context (by the Spring Cloud AWS
- * classes). A region can be either manually configured
- * {@link EnableContextRegion#region()} with a constant expression, dynamic expression
- * (using a SpEL expression) or a place holder. If the application context is running
- * inside a EC2 instance The region can also be dynamically retrieved from the EC2
- * instance meta-data by enabling the {@link EnableContextRegion#autoDetect()} attribute
- * or from the default AWS SDK {@link AwsRegionProviderChain} by enabling
+ * Configures a {@link io.awspring.cloud.core.region.RegionProvider} instance
+ * for the application context. The region provider will be used for all Amazon
+ * Web Service clients that are created inside the application context (by the
+ * Spring Cloud AWS classes). A region can be either manually configured
+ * {@link EnableContextRegion#region()} with a constant expression, dynamic
+ * expression (using a SpEL expression) or a place holder. If the application
+ * context is running inside a EC2 instance The region can also be dynamically
+ * retrieved from the EC2 instance meta-data by enabling the
+ * {@link EnableContextRegion#autoDetect()} attribute or from the default AWS
+ * SDK {@link AwsRegionProviderChain} by enabling
  * {@link EnableContextRegion#autoDetect()} and
  * {@link EnableContextRegion#useDefaultAwsRegionChain()}.
  *
@@ -49,23 +50,27 @@ import org.springframework.context.annotation.Import;
 public @interface EnableContextRegion {
 
 	/**
-	 * Configures the region as a String value. The value must match to an enum defined in
-	 * {@link com.amazonaws.regions.Regions}. This attribute is a String value allowing
-	 * expressions and placeholders to be used for the region configuration.
-	 * @return - the region a constant definition, SpEL expression or placeholder definition
+	 * Configures the region as a String value. The value must match to an enum
+	 * defined in {@link com.amazonaws.regions.Regions}. This attribute is a String
+	 * value allowing expressions and placeholders to be used for the region
+	 * configuration.
+	 * @return - the region a constant definition, SpEL expression or placeholder
+	 * definition
 	 */
 	String region() default "";
 
 	/**
 	 * Configures the auto-detection of a region that should be fetched from the EC2
 	 * meta-data. Disabled by default.
-	 * @return - configures if the region should be fetched by the EC2 meta-data. Must be
-	 * false if a region is configured in the {@link EnableContextRegion#region()} attribute.
+	 * @return - configures if the region should be fetched by the EC2 meta-data.
+	 * Must be false if a region is configured in the
+	 * {@link EnableContextRegion#region()} attribute.
 	 */
 	boolean autoDetect() default false;
 
 	/**
-	 * Whether default AWS SDK region provider chain should be used when auto is set to true.
+	 * Whether default AWS SDK region provider chain should be used when auto is set
+	 * to true.
 	 * @return - if default AWS SDK region provider chain should be used for region
 	 * resolution.
 	 */

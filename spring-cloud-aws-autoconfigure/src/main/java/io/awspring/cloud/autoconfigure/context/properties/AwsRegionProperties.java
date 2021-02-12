@@ -36,10 +36,10 @@ public class AwsRegionProperties {
 	public static final String PREFIX = "cloud.aws.region";
 
 	/**
-	 * Configures a static region for the application. Possible regions are (currently)
-	 * us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1, ap-southeast-1,
-	 * ap-southeast-1, ap-northeast-1, sa-east-1, cn-north-1 and any custom region configured
-	 * with own region meta data.
+	 * Configures a static region for the application. Possible regions are
+	 * (currently) us-east-1, us-west-1, us-west-2, eu-west-1, eu-central-1,
+	 * ap-southeast-1, ap-southeast-1, ap-northeast-1, sa-east-1, cn-north-1 and any
+	 * custom region configured with own region meta data.
 	 */
 	private String staticRegion;
 

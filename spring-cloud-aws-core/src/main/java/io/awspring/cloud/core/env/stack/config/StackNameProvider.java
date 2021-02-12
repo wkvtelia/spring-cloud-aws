@@ -17,8 +17,8 @@
 package io.awspring.cloud.core.env.stack.config;
 
 /**
- * Represents a strategy for resolving and providing the name of an amazon cloud formation
- * stack.
+ * Represents a strategy for resolving and providing the name of an amazon cloud
+ * formation stack.
  *
  * @author Christian Stettler
  */

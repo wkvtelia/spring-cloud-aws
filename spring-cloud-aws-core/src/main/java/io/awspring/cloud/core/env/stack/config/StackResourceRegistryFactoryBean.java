@@ -35,8 +35,8 @@ import org.springframework.util.StringUtils;
 
 /**
  * Exposes a fully populated
- * {@link io.awspring.cloud.core.env.stack.StackResourceRegistry} instance representing
- * the resources of the specified stack.
+ * {@link io.awspring.cloud.core.env.stack.StackResourceRegistry} instance
+ * representing the resources of the specified stack.
  *
  * @author Christian Stettler
  * @author Agim Emruli
@@ -119,8 +119,8 @@ public class StackResourceRegistryFactoryBean extends AbstractFactoryBean<Listab
 	}
 
 	/**
-	 * Stack resource registry containing a static mapping of logical resource ids to physical
-	 * resource ids.
+	 * Stack resource registry containing a static mapping of logical resource ids
+	 * to physical resource ids.
 	 */
 	private static final class StaticStackResourceRegistry implements ListableStackResourceFactory {
 

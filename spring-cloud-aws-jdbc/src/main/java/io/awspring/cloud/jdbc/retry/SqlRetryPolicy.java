@@ -34,17 +34,19 @@ import org.springframework.retry.context.RetryContextSupport;
 import org.springframework.retry.policy.SimpleRetryPolicy;
 
 /**
- * {@link RetryPolicy} implementation that checks for database error which are retryable.
- * Normally this are well known exceptions inside the JDBC (1.6) exception hierarchy and
- * also the Spring {@link org.springframework.dao.DataAccessException} hierarchy. In
- * addition to that, this class also tries for permanent exception which are related to a
- * connection of the database. This is useful because Amazon RDS database instances might
- * be retryable even if there is a permanent error. This is typically the case in a master
- * a/z failover where the source instance might not be available but a second attempt
- * might succeed because the DNS record has been updated to the failover instance.
+ * {@link RetryPolicy} implementation that checks for database error which are
+ * retryable. Normally this are well known exceptions inside the JDBC (1.6)
+ * exception hierarchy and also the Spring
+ * {@link org.springframework.dao.DataAccessException} hierarchy. In addition to
+ * that, this class also tries for permanent exception which are related to a
+ * connection of the database. This is useful because Amazon RDS database
+ * instances might be retryable even if there is a permanent error. This is
+ * typically the case in a master a/z failover where the source instance might
+ * not be available but a second attempt might succeed because the DNS record
+ * has been updated to the failover instance.
  * <p>
- * In contrast to a {@link SimpleRetryPolicy} this class also checks recursively the cause
- * of the exception if there is a retryable implementation.
+ * In contrast to a {@link SimpleRetryPolicy} this class also checks recursively
+ * the cause of the exception if there is a retryable implementation.
  * </p>
  *
  * @author Agim Emruli
@@ -61,7 +63,8 @@ public class SqlRetryPolicy implements RetryPolicy {
 			getSqlRetryAbleExceptions(), false);
 
 	/**
-	 * Holds the maximum number of retries that should be tried if an exception is retryable.
+	 * Holds the maximum number of retries that should be tried if an exception is
+	 * retryable.
 	 */
 	private int maxNumberOfRetries = 3;
 
@@ -80,21 +83,23 @@ public class SqlRetryPolicy implements RetryPolicy {
 	}
 
 	/**
-	 * Returns if this method is retryable based on the {@link RetryContext}. If there is no
-	 * Throwable registered, then this method returns <code>true</code> without checking any
-	 * further conditions. If there is a Throwable registered, this class checks if the
-	 * registered Throwable is a retryable Exception in the context of SQL exception. If not
-	 * successful, this class also checks the cause if there is a nested retryable exception
-	 * available.
+	 * Returns if this method is retryable based on the {@link RetryContext}. If
+	 * there is no Throwable registered, then this method returns <code>true</code>
+	 * without checking any further conditions. If there is a Throwable registered,
+	 * this class checks if the registered Throwable is a retryable Exception in the
+	 * context of SQL exception. If not successful, this class also checks the cause
+	 * if there is a nested retryable exception available.
 	 * <p>
-	 * Before checking exception this class checks that the current retry count (fetched
-	 * through {@link org.springframework.retry.RetryContext#getRetryCount()} is smaller or
+	 * Before checking exception this class checks that the current retry count
+	 * (fetched through
+	 * {@link org.springframework.retry.RetryContext#getRetryCount()} is smaller or
 	 * equals to the {@link #maxNumberOfRetries}
 	 * </p>
-	 * @param context - the retry context holding information about the retryable operation
-	 *     (number of retries, throwable if any)
-	 * @return <code>true</code> if there is no throwable registered, if there is a retryable
-	 * exception and the number of maximum numbers of retries have not been reached.
+	 * @param context - the retry context holding information about the retryable
+	 *     operation (number of retries, throwable if any)
+	 * @return <code>true</code> if there is no throwable registered, if there is a
+	 * retryable exception and the number of maximum numbers of retries have not
+	 * been reached.
 	 */
 	@Override
 	public boolean canRetry(RetryContext context) {
@@ -140,16 +145,18 @@ public class SqlRetryPolicy implements RetryPolicy {
 	}
 
 	/**
-	 * Configures the maximum number of retries. This number should be a trade-off between
-	 * having enough retries to survive a database outage due to failure and a responsive and
-	 * not stalling application. The default value for the maximum number is 3.
+	 * Configures the maximum number of retries. This number should be a trade-off
+	 * between having enough retries to survive a database outage due to failure and
+	 * a responsive and not stalling application. The default value for the maximum
+	 * number is 3.
 	 * <p>
-	 * <b>Note:</b>Consider using a {@link BackOffPolicy} which ensures that there is enough
-	 * time left between the retry attempts instead of increasing this value to a high number.
-	 * The back-off policy ensures that there is a delay in between the retry operations.
+	 * <b>Note:</b>Consider using a {@link BackOffPolicy} which ensures that there
+	 * is enough time left between the retry attempts instead of increasing this
+	 * value to a high number. The back-off policy ensures that there is a delay in
+	 * between the retry operations.
 	 * </p>
-	 * @param maxNumberOfRetries - the maximum number of retries should be a positive number,
-	 *     otherwise all retries will fail.
+	 * @param maxNumberOfRetries - the maximum number of retries should be a
+	 *     positive number, otherwise all retries will fail.
 	 */
 	public void setMaxNumberOfRetries(int maxNumberOfRetries) {
 		this.maxNumberOfRetries = maxNumberOfRetries;

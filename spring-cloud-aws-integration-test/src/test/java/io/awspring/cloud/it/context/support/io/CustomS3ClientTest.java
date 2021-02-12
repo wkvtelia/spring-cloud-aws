@@ -92,9 +92,9 @@ public class CustomS3ClientTest {
 	static class Config {
 
 		/**
-		 * Overwrites default S3 client and uses {@link ConfigurationProperties} annotated class
-		 * to build custom client. Makes sure that instance is created after configuration
-		 * properties are bound.
+		 * Overwrites default S3 client and uses {@link ConfigurationProperties}
+		 * annotated class to build custom client. Makes sure that instance is created
+		 * after configuration properties are bound.
 		 * @param s3Properties - s3 properties
 		 * @return custom Amazon S3 client.
 		 */

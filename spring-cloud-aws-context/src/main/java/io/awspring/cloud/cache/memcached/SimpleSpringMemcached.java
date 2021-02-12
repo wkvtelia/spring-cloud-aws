@@ -109,8 +109,8 @@ public class SimpleSpringMemcached implements Cache {
 	}
 
 	/**
-	 * <b>IMPORTANT:</b> This operation is not atomic as the underlying implementation
-	 * (memcached) does not provide a way to do it.
+	 * <b>IMPORTANT:</b> This operation is not atomic as the underlying
+	 * implementation (memcached) does not provide a way to do it.
 	 */
 	@Override
 	public ValueWrapper putIfAbsent(Object key, Object value) {

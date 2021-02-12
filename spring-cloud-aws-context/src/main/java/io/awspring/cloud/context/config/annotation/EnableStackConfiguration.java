@@ -36,8 +36,8 @@ import org.springframework.context.annotation.Import;
 public @interface EnableStackConfiguration {
 
 	/**
-	 * The stack name to be used to retrieve the stack configuration. The stack is auto
-	 * detected if this attribute is not specified
+	 * The stack name to be used to retrieve the stack configuration. The stack is
+	 * auto detected if this attribute is not specified
 	 * @return the configured stack name if used
 	 */
 	String stackName() default "";

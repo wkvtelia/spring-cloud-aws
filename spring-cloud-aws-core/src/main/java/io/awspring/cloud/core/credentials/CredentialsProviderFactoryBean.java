@@ -27,8 +27,8 @@ import org.springframework.beans.factory.config.AbstractFactoryBean;
 import org.springframework.util.Assert;
 
 /**
- * {@link org.springframework.beans.factory.FactoryBean} that creates a composite
- * {@link AWSCredentialsProvider} based on the delegates.
+ * {@link org.springframework.beans.factory.FactoryBean} that creates a
+ * composite {@link AWSCredentialsProvider} based on the delegates.
  *
  * @author Agim Emruli
  * @since 1.0

@@ -34,11 +34,12 @@ public @interface ConditionalOnMissingAmazonClient {
 
 	/**
 	 * <p>
-	 * The Amazon clients that needs to be available in order to match the condition.
+	 * The Amazon clients that needs to be available in order to match the
+	 * condition.
 	 * </p>
 	 *
-	 * <b>IMPORTANT</b>: This condition does not verify the presence of a client, based on the
-	 * type, but based on the default name as computed in
+	 * <b>IMPORTANT</b>: This condition does not verify the presence of a client,
+	 * based on the type, but based on the default name as computed in
 	 * {@link io.awspring.cloud.core.config.AmazonWebserviceClientConfigurationUtils#getBeanName}.
 	 * @return Amazon client class
 	 */

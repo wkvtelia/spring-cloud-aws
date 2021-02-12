@@ -24,7 +24,8 @@ import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
 /**
- * Configuration class that configures "default" beans that are used by all components.
+ * Configuration class that configures "default" beans that are used by all
+ * components.
  *
  * @author Agim Emruli
  */

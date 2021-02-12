@@ -19,10 +19,10 @@ package io.awspring.cloud.jdbc.retry;
 import org.springframework.retry.RetryException;
 
 /**
- * Exception that occurs if a retry operation is installed inside a database transaction.
- * In order to do a successful retry, the database transaction must be closed (rollback)
- * and a new transaction started. Hence it is not possible to do a retry inside a running
- * transactional method.
+ * Exception that occurs if a retry operation is installed inside a database
+ * transaction. In order to do a successful retry, the database transaction must
+ * be closed (rollback) and a new transaction started. Hence it is not possible
+ * to do a retry inside a running transactional method.
  *
  * @author Agim Emruli
  * @since 1.0

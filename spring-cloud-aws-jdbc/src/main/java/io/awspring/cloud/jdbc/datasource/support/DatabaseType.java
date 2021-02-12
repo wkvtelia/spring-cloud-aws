@@ -21,8 +21,8 @@ import io.awspring.cloud.core.support.documentation.RuntimeUse;
 import org.springframework.util.Assert;
 
 /**
- * Enumeration that holds all supported databases. The enumeration is mainly driven by the
- * supported databases by the underlying AWS cloud implementation.
+ * Enumeration that holds all supported databases. The enumeration is mainly
+ * driven by the supported databases by the underlying AWS cloud implementation.
  * @author Agim Emruli
  */
 public enum DatabaseType {

@@ -40,10 +40,11 @@ import static io.awspring.cloud.core.config.xml.XmlWebserviceConfigurationUtils.
 
 /**
  * {@link org.springframework.beans.factory.xml.BeanDefinitionParser} parser
- * implementation for the datasource element. Parses the element and constructs a fully
- * configured {@link AmazonRdsDataSourceFactoryBean} bean definition. Also creates a bean
- * definition for the {@link com.amazonaws.services.rds.AmazonRDSClient} if there is not
- * already an existing one this application context.
+ * implementation for the datasource element. Parses the element and constructs
+ * a fully configured {@link AmazonRdsDataSourceFactoryBean} bean definition.
+ * Also creates a bean definition for the
+ * {@link com.amazonaws.services.rds.AmazonRDSClient} if there is not already an
+ * existing one this application context.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -72,10 +73,12 @@ class AmazonRdsDataSourceBeanDefinitionParser extends AbstractBeanDefinitionPars
 	private static final String DATABASE_NAME = "database-name";
 
 	/**
-	 * Creates a {@link io.awspring.cloud.jdbc.datasource.DataSourceFactory} implementation.
-	 * Uses the TomcatJdbcDataSourceFactory implementation and passes all pool attributes from
-	 * the xml directly to the class (through setting the bean properties).
-	 * @param element - The datasource element which may contain a pool-attributes element
+	 * Creates a {@link io.awspring.cloud.jdbc.datasource.DataSourceFactory}
+	 * implementation. Uses the TomcatJdbcDataSourceFactory implementation and
+	 * passes all pool attributes from the xml directly to the class (through
+	 * setting the bean properties).
+	 * @param element - The datasource element which may contain a pool-attributes
+	 *     element
 	 * @return - fully configured bean definition for the DataSourceFactory
 	 */
 	private static AbstractBeanDefinition createDataSourceFactoryBeanDefinition(Element element) {

@@ -36,11 +36,12 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 /**
- * {@link org.springframework.beans.factory.FactoryBean} implementation that creates a
- * datasource backed by an Amazon Relational Database service instance. This factory bean
- * retrieves all the metadata from the AWS RDS service in order to create and configure a
- * datasource. This class uses the {@link AmazonRDS} service to retrieve the metadata and
- * the {@link DataSourceFactory} to actually create the datasource.
+ * {@link org.springframework.beans.factory.FactoryBean} implementation that
+ * creates a datasource backed by an Amazon Relational Database service
+ * instance. This factory bean retrieves all the metadata from the AWS RDS
+ * service in order to create and configure a datasource. This class uses the
+ * {@link AmazonRDS} service to retrieve the metadata and the
+ * {@link DataSourceFactory} to actually create the datasource.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -63,16 +64,17 @@ public class AmazonRdsDataSourceFactoryBean extends AbstractFactoryBean<DataSour
 
 	/**
 	 * Constructor which retrieves all mandatory objects to allow the object to be
-	 * constructed. This are the minimal configuration options which uses defaults or no
-	 * values for all optional elements.
-	 * @param amazonRds - The amazonRds instance used to connect to the service. This object
-	 *     will be used to actually retrieve the datasource metadata from the Amazon RDS
-	 *     service.
-	 * @param dbInstanceIdentifier - the unique database instance identifier in the Amazon RDS
-	 *     service
-	 * @param password - The password used to connect to the datasource. For security reasons
-	 *     the password is not available in the metadata (in contrast to the user) so it must
-	 *     be provided in order to connect to the database with JDBC.
+	 * constructed. This are the minimal configuration options which uses defaults
+	 * or no values for all optional elements.
+	 * @param amazonRds - The amazonRds instance used to connect to the service.
+	 *     This object will be used to actually retrieve the datasource metadata
+	 *     from the Amazon RDS service.
+	 * @param dbInstanceIdentifier - the unique database instance identifier in the
+	 *     Amazon RDS service
+	 * @param password - The password used to connect to the datasource. For
+	 *     security reasons the password is not available in the metadata (in
+	 *     contrast to the user) so it must be provided in order to connect to the
+	 *     database with JDBC.
 	 */
 	public AmazonRdsDataSourceFactoryBean(AmazonRDS amazonRds, String dbInstanceIdentifier, String password) {
 		this.amazonRds = amazonRds;
@@ -82,29 +84,30 @@ public class AmazonRdsDataSourceFactoryBean extends AbstractFactoryBean<DataSour
 
 	/**
 	 * Allows to configure a different DataSourceFactory in order to use a different
-	 * DataSource implementation. Uses the {@link TomcatJdbcDataSourceFactory} by default if
-	 * not configured.
-	 * @param dataSourceFactory - A fully configured DataSourceFactory instance, will be used
-	 *     to actually create the datasource.
+	 * DataSource implementation. Uses the {@link TomcatJdbcDataSourceFactory} by
+	 * default if not configured.
+	 * @param dataSourceFactory - A fully configured DataSourceFactory instance,
+	 *     will be used to actually create the datasource.
 	 */
 	public void setDataSourceFactory(DataSourceFactory dataSourceFactory) {
 		this.dataSourceFactory = dataSourceFactory;
 	}
 
 	/**
-	 * Allows to set a different user then the master user name in order to connect to the
-	 * database. In contrast to the password, the master user name is available in the
-	 * metadata to connect to the database so this username is only used when configured.
-	 * @param username - The username to connect to the database, every value provided (even
-	 *     empty ones) are used to connect to the database.
+	 * Allows to set a different user then the master user name in order to connect
+	 * to the database. In contrast to the password, the master user name is
+	 * available in the metadata to connect to the database so this username is only
+	 * used when configured.
+	 * @param username - The username to connect to the database, every value
+	 *     provided (even empty ones) are used to connect to the database.
 	 */
 	public void setUsername(String username) {
 		this.username = username;
 	}
 
 	/**
-	 * Configures an own database name to be used if the default database (that is configured
-	 * in the meta-data) should not be used.
+	 * Configures an own database name to be used if the default database (that is
+	 * configured in the meta-data) should not be used.
 	 * @param databaseName - the database name to be used while connecting
 	 */
 	public void setDatabaseName(String databaseName) {
@@ -112,10 +115,10 @@ public class AmazonRdsDataSourceFactoryBean extends AbstractFactoryBean<DataSour
 	}
 
 	/**
-	 * Configures an optional {@link io.awspring.cloud.core.env.ResourceIdResolver} used to
-	 * resolve a logical name to a physical one.
-	 * @param resourceIdResolver - the resourceIdResolver instance, might be null or not
-	 *     called at all
+	 * Configures an optional {@link io.awspring.cloud.core.env.ResourceIdResolver}
+	 * used to resolve a logical name to a physical one.
+	 * @param resourceIdResolver - the resourceIdResolver instance, might be null or
+	 *     not called at all
 	 */
 	public void setResourceIdResolver(ResourceIdResolver resourceIdResolver) {
 		this.resourceIdResolver = resourceIdResolver;
@@ -137,12 +140,12 @@ public class AmazonRdsDataSourceFactoryBean extends AbstractFactoryBean<DataSour
 	}
 
 	/**
-	 * Creates a data source based in the instance name. The physical information for the data
-	 * source is retrieved by the name passed as identifier. This method does distinguish
-	 * between regular amazon rds instances and read-replicas because both meta-data is
-	 * retrieved on the same way.
-	 * @param identifier - the database identifier for the data source configured in amazon
-	 *     rds
+	 * Creates a data source based in the instance name. The physical information
+	 * for the data source is retrieved by the name passed as identifier. This
+	 * method does distinguish between regular amazon rds instances and
+	 * read-replicas because both meta-data is retrieved on the same way.
+	 * @param identifier - the database identifier for the data source configured in
+	 *     amazon rds
 	 * @return a fully configured and initialized {@link javax.sql.DataSource}
 	 * @throws java.lang.IllegalStateException if no database has been found
 	 * @throws java.lang.Exception in case of underlying exceptions
@@ -153,7 +156,8 @@ public class AmazonRdsDataSourceFactoryBean extends AbstractFactoryBean<DataSour
 	}
 
 	/**
-	 * Retrieves the {@link com.amazonaws.services.rds.model.DBInstance} information.
+	 * Retrieves the {@link com.amazonaws.services.rds.model.DBInstance}
+	 * information.
 	 * @param identifier - the database identifier used
 	 * @return - the db instance
 	 * @throws IllegalStateException if the db instance is not found

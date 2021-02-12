@@ -34,12 +34,12 @@ import org.springframework.core.env.PropertySource;
 
 /**
  * Builds a {@link CompositePropertySource} with various
- * {@link AwsSecretsManagerPropertySource} instances based on active profiles, application
- * name and default context permutations. Mostly copied from Spring Cloud Consul's config
- * support.
+ * {@link AwsSecretsManagerPropertySource} instances based on active profiles,
+ * application name and default context permutations. Mostly copied from Spring
+ * Cloud Consul's config support.
  *
- * Note: this class is used only by legacy Spring Cloud Bootstrap phase based config
- * loading.
+ * Note: this class is used only by legacy Spring Cloud Bootstrap phase based
+ * config loading.
  *
  * @author Fabio Maia
  * @author Matej Nedic

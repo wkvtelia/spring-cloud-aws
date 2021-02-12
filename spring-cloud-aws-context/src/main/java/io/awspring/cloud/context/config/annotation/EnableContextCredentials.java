@@ -24,9 +24,9 @@ import java.lang.annotation.Target;
 import org.springframework.context.annotation.Import;
 
 /**
- * Enables a credentials provider configuration for the application context, that
- * credentials provider is used for all automatically created amazon web services client
- * (either through annotations or xml).
+ * Enables a credentials provider configuration for the application context,
+ * that credentials provider is used for all automatically created amazon web
+ * services client (either through annotations or xml).
  *
  * @author Agim Emruli
  * @deprecated use auto-configuration
@@ -51,7 +51,8 @@ public @interface EnableContextCredentials {
 
 	/**
 	 * Enables a instance profile specific credentials provider.
-	 * @return true if the instance profile credentials provider should be configured
+	 * @return true if the instance profile credentials provider should be
+	 * configured
 	 */
 	boolean instanceProfile() default false;
 

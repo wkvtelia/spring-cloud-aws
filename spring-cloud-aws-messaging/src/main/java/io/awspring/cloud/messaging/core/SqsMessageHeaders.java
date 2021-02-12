@@ -23,9 +23,9 @@ import java.util.UUID;
 import org.springframework.messaging.MessageHeaders;
 
 /**
- * Specialization of the {@link MessageHeaders} class that allows to set an ID. This was
- * done to support cases where the ID sent by the producer must be restored on the
- * consumer side for traceability.
+ * Specialization of the {@link MessageHeaders} class that allows to set an ID.
+ * This was done to support cases where the ID sent by the producer must be
+ * restored on the consumer side for traceability.
  *
  * @author Alain Sahli
  * @author Wojciech Mąka

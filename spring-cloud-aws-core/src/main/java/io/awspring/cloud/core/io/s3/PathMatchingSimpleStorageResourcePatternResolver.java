@@ -40,15 +40,15 @@ import org.springframework.util.PathMatcher;
 import org.springframework.util.StringUtils;
 
 /**
- * A {@link ResourcePatternResolver} implementation which allows an ant-style path
- * matching when loading S3 resources. Ant wildcards (*, ** and ?) are allowed in both,
- * bucket name and object name.
+ * A {@link ResourcePatternResolver} implementation which allows an ant-style
+ * path matching when loading S3 resources. Ant wildcards (*, ** and ?) are
+ * allowed in both, bucket name and object name.
  * <p>
- * <b>WARNING:</b> Be aware that when you are using wildcards in the bucket name it can
- * take a very long time to parse all files. Moreover this implementation does not return
- * truncated results. This means that when handling huge buckets it could lead to serious
- * performance problems. For more information look at the
- * {@code findProgressivelyWithPartialMatch} method.
+ * <b>WARNING:</b> Be aware that when you are using wildcards in the bucket name
+ * it can take a very long time to parse all files. Moreover this implementation
+ * does not return truncated results. This means that when handling huge buckets
+ * it could lead to serious performance problems. For more information look at
+ * the {@code findProgressivelyWithPartialMatch} method.
  * </p>
  *
  * @author Alain Sahli
@@ -69,12 +69,12 @@ public class PathMatchingSimpleStorageResourcePatternResolver implements Resourc
 	/**
 	 * Construct a new instance of the
 	 * {@link PathMatchingSimpleStorageResourcePatternResolver} with a
-	 * {@link SimpleStorageProtocolResolver} to load AmazonS3 instances, and also a delegate
-	 * {@link ResourcePatternResolver} to resolve resource on default path (like file and
-	 * classpath).
+	 * {@link SimpleStorageProtocolResolver} to load AmazonS3 instances, and also a
+	 * delegate {@link ResourcePatternResolver} to resolve resource on default path
+	 * (like file and classpath).
 	 * @param amazonS3 - used to retrieve the directory listings
-	 * @param resourcePatternResolverDelegate - delegate resolver used to resolve common path
-	 *     (file, classpath, servlet etc.)
+	 * @param resourcePatternResolverDelegate - delegate resolver used to resolve
+	 *     common path (file, classpath, servlet etc.)
 	 */
 	public PathMatchingSimpleStorageResourcePatternResolver(AmazonS3 amazonS3,
 			ResourcePatternResolver resourcePatternResolverDelegate) {
@@ -84,8 +84,8 @@ public class PathMatchingSimpleStorageResourcePatternResolver implements Resourc
 	}
 
 	/**
-	 * Set the PathMatcher implementation to use for this resource pattern resolver. Default
-	 * is AntPathMatcher.
+	 * Set the PathMatcher implementation to use for this resource pattern resolver.
+	 * Default is AntPathMatcher.
 	 * @param pathMatcher The pathMatches implementation used, must not be null
 	 * @see AntPathMatcher
 	 */
@@ -207,11 +207,11 @@ public class PathMatchingSimpleStorageResourcePatternResolver implements Resourc
 	}
 
 	/**
-	 * Searches for matching keys progressively. This means that instead of retrieving all
-	 * keys given a prefix, it goes down one level at a time and filters out all non-matching
-	 * results. This avoids a lot of unused requests results. WARNING: This method does not
-	 * truncate results. Therefore all matching resources will be returned regardless of the
-	 * truncation.
+	 * Searches for matching keys progressively. This means that instead of
+	 * retrieving all keys given a prefix, it goes down one level at a time and
+	 * filters out all non-matching results. This avoids a lot of unused requests
+	 * results. WARNING: This method does not truncate results. Therefore all
+	 * matching resources will be returned regardless of the truncation.
 	 * @param bucketName name of the bucket
 	 * @param resources retrieved resources
 	 * @param prefix bucket prefix

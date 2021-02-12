@@ -28,9 +28,10 @@ import io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource;
 import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 
 /**
- * {@link io.awspring.cloud.jdbc.rds.AmazonRdsDataSourceFactoryBean} sub-class that is
- * capable to handle amazon rds read-replicas. This is especially useful in case of
- * read-heavy applications to leverage read-replica instance for all read-accesses.
+ * {@link io.awspring.cloud.jdbc.rds.AmazonRdsDataSourceFactoryBean} sub-class
+ * that is capable to handle amazon rds read-replicas. This is especially useful
+ * in case of read-heavy applications to leverage read-replica instance for all
+ * read-accesses.
  *
  * @author Agim Emruli
  */
@@ -38,15 +39,15 @@ public class AmazonRdsReadReplicaAwareDataSourceFactoryBean extends AmazonRdsDat
 
 	/**
 	 * Constructor which retrieves all mandatory objects to allow the object to be
-	 * constructed. This are the minimal configuration options which uses defaults or no
-	 * values for all optional elements.
-	 * @param amazonRDS - The amazonRDS instance used to connect to the service. This object
-	 *     will be used to actually retrieve the datasource metadata from the Amazon RDS
-	 *     service.
-	 * @param dbInstanceIdentifier - the unique database instance identifier in the Amazon RDS
-	 *     service
-	 * @param password - The password used to connect to the datasource. For security reasons
-	 *     the password is not available in the
+	 * constructed. This are the minimal configuration options which uses defaults
+	 * or no values for all optional elements.
+	 * @param amazonRDS - The amazonRDS instance used to connect to the service.
+	 *     This object will be used to actually retrieve the datasource metadata
+	 *     from the Amazon RDS service.
+	 * @param dbInstanceIdentifier - the unique database instance identifier in the
+	 *     Amazon RDS service
+	 * @param password - The password used to connect to the datasource. For
+	 *     security reasons the password is not available in the
 	 */
 	public AmazonRdsReadReplicaAwareDataSourceFactoryBean(AmazonRDS amazonRDS, String dbInstanceIdentifier,
 			String password) {
@@ -54,15 +55,16 @@ public class AmazonRdsReadReplicaAwareDataSourceFactoryBean extends AmazonRdsDat
 	}
 
 	/**
-	 * Constructs a {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} data
-	 * source that contains the regular data source as a default, and all read-replicas as
-	 * additional data source. The
-	 * {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} is additionally
-	 * wrapped with a
-	 * {@link org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy}, because the
-	 * read-only flag is only available after the transactional context has been established.
-	 * This is only the case if the physical connection is requested after the transaction
-	 * start and not while starting a transaction.
+	 * Constructs a
+	 * {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} data
+	 * source that contains the regular data source as a default, and all
+	 * read-replicas as additional data source. The
+	 * {@link io.awspring.cloud.jdbc.datasource.ReadOnlyRoutingDataSource} is
+	 * additionally wrapped with a
+	 * {@link org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy},
+	 * because the read-only flag is only available after the transactional context
+	 * has been established. This is only the case if the physical connection is
+	 * requested after the transaction start and not while starting a transaction.
 	 * @return a ReadOnlyRoutingDataSource that is wrapped with a
 	 * LazyConnectionDataSourceProxy
 	 * @throws Exception if the underlying data source setup throws any exception

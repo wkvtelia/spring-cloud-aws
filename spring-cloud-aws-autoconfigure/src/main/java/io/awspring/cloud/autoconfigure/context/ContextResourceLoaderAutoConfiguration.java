@@ -37,7 +37,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 public class ContextResourceLoaderAutoConfiguration {
 
 	/**
-	 * The prefix used for properties related to S3 resource loading via the ResourceLoader.
+	 * The prefix used for properties related to S3 resource loading via the
+	 * ResourceLoader.
 	 */
 	public static final String AWS_LOADER_PROPERTY_PREFIX = "cloud.aws.loader";
 

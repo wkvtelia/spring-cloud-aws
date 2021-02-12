@@ -34,13 +34,14 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  * <p>
  * <br>
  * Note:<br>
- * This test is a fire and forget test as the amazon simple mail service does not provide
- * timely feedback if a message is send or not. Using the
- * {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService} method to get the
- * send statistics, does not help as the statistics there are only updated after a couple
- * of minutes. Using an IMAP/POP3 account is to complicated for the test to be implemented
- * in terms of mailbox setup etc. The main purpose of this test is to ensure that the api
- * is correctly implemented and the webservice acknowledges the message.
+ * This test is a fire and forget test as the amazon simple mail service does
+ * not provide timely feedback if a message is send or not. Using the
+ * {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService} method to
+ * get the send statistics, does not help as the statistics there are only
+ * updated after a couple of minutes. Using an IMAP/POP3 account is to
+ * complicated for the test to be implemented in terms of mailbox setup etc. The
+ * main purpose of this test is to ensure that the api is correctly implemented
+ * and the webservice acknowledges the message.
  * </p>
  *
  * @author Agim Emruli

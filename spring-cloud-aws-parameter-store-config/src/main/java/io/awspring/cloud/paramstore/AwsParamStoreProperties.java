@@ -25,8 +25,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 /**
- * Configuration properties for the AWS Parameter Store integration. Mostly based on the
- * Spring Cloud Consul Configuration equivalent.
+ * Configuration properties for the AWS Parameter Store integration. Mostly
+ * based on the Spring Cloud Consul Configuration equivalent.
  *
  * @author Joris Kuipers
  * @author Matej Nedic
@@ -51,8 +51,9 @@ public class AwsParamStoreProperties implements Validator {
 	private static final Pattern PROFILE_SEPARATOR_PATTERN = Pattern.compile("[a-zA-Z0-9.\\-_/\\\\]+");
 
 	/**
-	 * Prefix indicating first level for every property. Value must start with a forward slash
-	 * followed by a valid path segment or be empty. Defaults to "/config".
+	 * Prefix indicating first level for every property. Value must start with a
+	 * forward slash followed by a valid path segment or be empty. Defaults to
+	 * "/config".
 	 */
 	private String prefix = "/config";
 
@@ -75,8 +76,8 @@ public class AwsParamStoreProperties implements Validator {
 	private boolean failFast = true;
 
 	/**
-	 * Alternative to spring.application.name to use in looking up values in AWS Parameter
-	 * Store.
+	 * Alternative to spring.application.name to use in looking up values in AWS
+	 * Parameter Store.
 	 */
 	private String name;
 

@@ -67,11 +67,11 @@ public class AwsSecretsManagerPropertySources {
 	/**
 	 * Creates property source for given context.
 	 * @param context property source context equivalent to the secret name
-	 * @param optional if creating context should fail with exception if secret cannot be
-	 *     loaded
+	 * @param optional if creating context should fail with exception if secret
+	 *     cannot be loaded
 	 * @param client Secret Manager client
-	 * @return a property source or null if secret could not be loaded and optional is set to
-	 * true
+	 * @return a property source or null if secret could not be loaded and optional
+	 * is set to true
 	 */
 	public AwsSecretsManagerPropertySource createPropertySource(String context, boolean optional,
 			AWSSecretsManager client) {

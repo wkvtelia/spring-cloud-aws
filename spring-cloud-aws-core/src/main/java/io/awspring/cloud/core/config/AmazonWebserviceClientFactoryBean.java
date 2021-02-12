@@ -39,9 +39,10 @@ import org.springframework.util.ReflectionUtils;
 
 /**
  * {@link org.springframework.beans.factory.FactoryBean} class to create
- * {@link AmazonWebServiceClient} instances. This class is responsible to create the
- * respective AmazonWebServiceClient classes because the configuration through Springs's
- * BeanFactory fails due to invalid properties inside the Webservice client classes (see
+ * {@link AmazonWebServiceClient} instances. This class is responsible to create
+ * the respective AmazonWebServiceClient classes because the configuration
+ * through Springs's BeanFactory fails due to invalid properties inside the
+ * Webservice client classes (see
  * https://github.com/aws/aws-sdk-java/issues/325)
  *
  * @param <T> implementation of the {@link AmazonWebServiceClient}

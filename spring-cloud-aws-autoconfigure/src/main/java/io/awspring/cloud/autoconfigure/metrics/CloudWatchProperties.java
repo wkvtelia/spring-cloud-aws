@@ -36,8 +36,8 @@ public class CloudWatchProperties extends StepRegistryProperties {
 	private static final int DEFAULT_BATCH_SIZE = 20;
 
 	/**
-	 * The namespace which will be used when sending metrics to CloudWatch. This property is
-	 * needed and must not be null.
+	 * The namespace which will be used when sending metrics to CloudWatch. This
+	 * property is needed and must not be null.
 	 */
 	private String namespace = "";
 

@@ -21,9 +21,9 @@ import com.amazonaws.regions.Regions;
 import io.awspring.cloud.core.support.documentation.RuntimeUse;
 
 /**
- * Static {@link RegionProvider} implementation that can used to statically configure a
- * region. The region could be provided through a configuration file at configuration
- * time.
+ * Static {@link RegionProvider} implementation that can used to statically
+ * configure a region. The region could be provided through a configuration file
+ * at configuration time.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -33,7 +33,8 @@ public class StaticRegionProvider implements RegionProvider {
 	private final Region configuredRegion;
 
 	/**
-	 * Constructs and configures the static region for this RegionProvider implementation.
+	 * Constructs and configures the static region for this RegionProvider
+	 * implementation.
 	 * @param configuredRegion - the region that will be statically returned in
 	 *     {@link #getRegion()}
 	 */

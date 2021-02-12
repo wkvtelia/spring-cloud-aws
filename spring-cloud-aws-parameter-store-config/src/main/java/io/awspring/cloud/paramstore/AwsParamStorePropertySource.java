@@ -30,8 +30,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.core.env.EnumerablePropertySource;
 
 /**
- * Recursively retrieves all parameters under the given context / path with decryption
- * from the AWS Parameter Store using the provided SSM client.
+ * Recursively retrieves all parameters under the given context / path with
+ * decryption from the AWS Parameter Store using the provided SSM client.
  *
  * @author Joris Kuipers
  * @author Eddú Meléndez

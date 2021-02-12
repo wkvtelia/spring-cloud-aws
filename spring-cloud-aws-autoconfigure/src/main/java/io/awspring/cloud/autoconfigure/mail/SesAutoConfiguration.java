@@ -50,8 +50,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import static io.awspring.cloud.core.config.AmazonWebserviceClientConfigurationUtils.GLOBAL_CLIENT_CONFIGURATION_BEAN_NAME;
 
 /**
- * {@link EnableAutoConfiguration Auto-configuration} for AWS Simple Email Service
- * support.
+ * {@link EnableAutoConfiguration Auto-configuration} for AWS Simple Email
+ * Service support.
  *
  * @author Agim Emruli
  * @author Eddú Meléndez

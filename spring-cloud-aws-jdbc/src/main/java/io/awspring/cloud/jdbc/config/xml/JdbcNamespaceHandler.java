@@ -21,8 +21,8 @@ import io.awspring.cloud.core.support.documentation.RuntimeUse;
 import org.springframework.beans.factory.xml.NamespaceHandlerSupport;
 
 /**
- * {@link org.springframework.beans.factory.xml.NamespaceHandler} implementation for the
- * Spring Cloud AWS jdbc namespace.
+ * {@link org.springframework.beans.factory.xml.NamespaceHandler} implementation
+ * for the Spring Cloud AWS jdbc namespace.
  *
  * @author Agim Emruli
  * @since 1.0

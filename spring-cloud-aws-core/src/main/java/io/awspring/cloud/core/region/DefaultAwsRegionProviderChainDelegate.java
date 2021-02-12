@@ -22,8 +22,9 @@ import com.amazonaws.regions.RegionUtils;
 
 /**
  * {@link RegionProvider} implementation that delegates to
- * {@link DefaultAwsRegionProviderChain} enabling loading region configuration from
- * environment variables, system properties, AWS profile, and instance metadata.
+ * {@link DefaultAwsRegionProviderChain} enabling loading region configuration
+ * from environment variables, system properties, AWS profile, and instance
+ * metadata.
  *
  * @author Maciej Walkowiak
  * @since 1.0

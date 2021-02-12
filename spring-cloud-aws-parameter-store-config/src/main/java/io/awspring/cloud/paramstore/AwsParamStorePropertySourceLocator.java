@@ -34,11 +34,11 @@ import org.springframework.core.env.PropertySource;
 
 /**
  * Builds a {@link CompositePropertySource} with various
- * {@link AwsParamStorePropertySource} instances based on active profiles, application
- * name and default context permutations. Mostly copied from Spring Cloud Consul's config
- * support, but without the option to have full config files in a param value: with the
- * AWS Parameter Store that wouldn't make sense, given the maximum size limit of 4096
- * characters for a parameter value.
+ * {@link AwsParamStorePropertySource} instances based on active profiles,
+ * application name and default context permutations. Mostly copied from Spring
+ * Cloud Consul's config support, but without the option to have full config
+ * files in a param value: with the AWS Parameter Store that wouldn't make
+ * sense, given the maximum size limit of 4096 characters for a parameter value.
  *
  * @author Joris Kuipers
  * @author Matej Nedic

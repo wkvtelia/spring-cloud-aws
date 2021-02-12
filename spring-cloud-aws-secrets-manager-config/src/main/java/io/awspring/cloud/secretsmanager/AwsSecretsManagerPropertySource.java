@@ -31,8 +31,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.core.env.EnumerablePropertySource;
 
 /**
- * Retrieves secret value under the given context / path from the AWS Secrets Manager
- * using the provided Secrets Manager client.
+ * Retrieves secret value under the given context / path from the AWS Secrets
+ * Manager using the provided Secrets Manager client.
  *
  * @author Fabio Maia
  * @author Maciej Walkowiak
@@ -53,7 +53,8 @@ public class AwsSecretsManagerPropertySource extends EnumerablePropertySource<AW
 
 	/**
 	 * Loads properties from the Secrets Manager secret.
-	 * @throws ResourceNotFoundException if specified secret does not exist in the database.
+	 * @throws ResourceNotFoundException if specified secret does not exist in the
+	 *     database.
 	 */
 	public void init() {
 		readSecretValue(new GetSecretValueRequest().withSecretId(context));

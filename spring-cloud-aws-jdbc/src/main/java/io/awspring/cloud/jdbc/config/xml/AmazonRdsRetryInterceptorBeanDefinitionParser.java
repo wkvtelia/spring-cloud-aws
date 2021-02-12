@@ -33,10 +33,11 @@ import org.springframework.util.StringUtils;
 import static io.awspring.cloud.core.config.xml.XmlWebserviceConfigurationUtils.getCustomClientOrDefaultClientBeanName;
 
 /**
- * {@link org.springframework.beans.factory.xml.BeanDefinitionParser} implementation for
- * the <code>retry-interceptor</code> element. This parser produces a
- * {@link org.aopalliance.intercept.MethodInterceptor} which can be used by advice to
- * intercept method calls and retry their particular operation.
+ * {@link org.springframework.beans.factory.xml.BeanDefinitionParser}
+ * implementation for the <code>retry-interceptor</code> element. This parser
+ * produces a {@link org.aopalliance.intercept.MethodInterceptor} which can be
+ * used by advice to intercept method calls and retry their particular
+ * operation.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -50,8 +51,8 @@ class AmazonRdsRetryInterceptorBeanDefinitionParser extends AbstractSingleBeanDe
 	private static final String RETRY_OPERATIONS_CLASS_NAME = "org.springframework.retry.support.RetryTemplate";
 
 	/**
-	 * Class name used for the policy, which is a composition of two policies (database
-	 * instance status and SQL error code).
+	 * Class name used for the policy, which is a composition of two policies
+	 * (database instance status and SQL error code).
 	 */
 	// @checkstyle:off
 	private static final String COMPOSITE_RETRY_POLICY_CLASS_NAME = "org.springframework.retry.policy.CompositeRetryPolicy";

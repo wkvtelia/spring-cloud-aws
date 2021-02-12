@@ -186,7 +186,8 @@ abstract class ResourceLoaderAwsTest {
 				.exists()).isFalse();
 	}
 
-	// Cleans up the bucket. Because if the bucket is not cleaned up, then the bucket will
+	// Cleans up the bucket. Because if the bucket is not cleaned up, then the
+	// bucket will
 	// not be deleted after the test run.
 	@AfterEach
 	void tearDown() {

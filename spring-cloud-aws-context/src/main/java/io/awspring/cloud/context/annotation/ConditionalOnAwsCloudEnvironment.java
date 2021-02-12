@@ -25,11 +25,11 @@ import java.lang.annotation.Target;
 import org.springframework.context.annotation.Conditional;
 
 /**
- * {@link org.springframework.context.annotation.Conditional} annotation that returns true
- * if the current JVM is started inside an AWS cloud environment. Useful for beans that
- * should only be created if the application context is bootstrapped inside the AWS
- * environment (e.g. beans that fetch meta data or beans that can only connect to AWS
- * internal services like Elasticache)
+ * {@link org.springframework.context.annotation.Conditional} annotation that
+ * returns true if the current JVM is started inside an AWS cloud environment.
+ * Useful for beans that should only be created if the application context is
+ * bootstrapped inside the AWS environment (e.g. beans that fetch meta data or
+ * beans that can only connect to AWS internal services like Elasticache)
  *
  * @author Agim Emruli
  * @deprecated use annotation from the autoconfigure module.

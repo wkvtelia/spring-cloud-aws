@@ -25,8 +25,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 /**
- * Configuration properties for the AWS Secrets Manager integration. Mostly based on the
- * Spring Cloud Consul Configuration equivalent.
+ * Configuration properties for the AWS Secrets Manager integration. Mostly
+ * based on the Spring Cloud Consul Configuration equivalent.
  *
  * @author Fabio Maia
  * @author Matej Nedic
@@ -52,8 +52,9 @@ public class AwsSecretsManagerProperties implements Validator {
 	private static final Pattern PROFILE_SEPARATOR_PATTERN = Pattern.compile("[a-zA-Z0-9.\\-_/\\\\]+");
 
 	/**
-	 * Prefix indicating first level for every property. Value must start with a forward slash
-	 * followed by a valid path segment or be empty. Defaults to "/secret".
+	 * Prefix indicating first level for every property. Value must start with a
+	 * forward slash followed by a valid path segment or be empty. Defaults to
+	 * "/secret".
 	 */
 	private String prefix = "/secret";
 
@@ -65,7 +66,8 @@ public class AwsSecretsManagerProperties implements Validator {
 	private boolean failFast = true;
 
 	/**
-	 * If region value is not null or empty it will be used in creation of AWSSecretsManager.
+	 * If region value is not null or empty it will be used in creation of
+	 * AWSSecretsManager.
 	 */
 	private String region;
 
@@ -75,8 +77,8 @@ public class AwsSecretsManagerProperties implements Validator {
 	private URI endpoint;
 
 	/**
-	 * Alternative to spring.application.name to use in looking up values in AWS Secrets
-	 * Manager.
+	 * Alternative to spring.application.name to use in looking up values in AWS
+	 * Secrets Manager.
 	 */
 	private String name;
 

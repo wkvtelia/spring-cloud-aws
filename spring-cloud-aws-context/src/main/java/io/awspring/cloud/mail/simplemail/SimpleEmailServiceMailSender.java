@@ -38,10 +38,10 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.util.StringUtils;
 
 /**
- * Simple MailSender implementation to send E-Mails with the Amazon Simple Email Service.
- * This implementation has no dependencies to the Java Mail API. It can be used to send
- * simple mail messages that doesn't have any attachment and therefore only consist of a
- * text body.
+ * Simple MailSender implementation to send E-Mails with the Amazon Simple Email
+ * Service. This implementation has no dependencies to the Java Mail API. It can
+ * be used to send simple mail messages that doesn't have any attachment and
+ * therefore only consist of a text body.
  *
  * @author Agim Emruli
  * @deprecated Use `spring-cloud-starter-aws-ses`

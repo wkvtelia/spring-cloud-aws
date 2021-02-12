@@ -33,20 +33,21 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ElastiCacheProperties {
 
 	/**
-	 * Configures the cache clusters for the caching configuration. Support one or multiple
-	 * caches {@link Cluster} configurations with their physical cache name (as configured in
-	 * the ElastiCache service) or their logical cache name if the caches are configured
-	 * inside a stack and
-	 * {@link io.awspring.cloud.context.config.annotation.EnableStackConfiguration} annotation
-	 * is used inside the application.
+	 * Configures the cache clusters for the caching configuration. Support one or
+	 * multiple caches {@link Cluster} configurations with their physical cache name
+	 * (as configured in the ElastiCache service) or their logical cache name if the
+	 * caches are configured inside a stack and
+	 * {@link io.awspring.cloud.context.config.annotation.EnableStackConfiguration}
+	 * annotation is used inside the application.
 	 */
 	private List<Cluster> clusters = Collections.emptyList();
 
 	/**
-	 * Configures the default expiration time in seconds if there is no custom expiration time
-	 * configuration with a {@link Cluster} configuration for the cache. The expiration time
-	 * is implementation specific (e.g. Redis or Memcached) and could therefore differ in the
-	 * behaviour based on the cache implementation.
+	 * Configures the default expiration time in seconds if there is no custom
+	 * expiration time configuration with a {@link Cluster} configuration for the
+	 * cache. The expiration time is implementation specific (e.g. Redis or
+	 * Memcached) and could therefore differ in the behaviour based on the cache
+	 * implementation.
 	 */
 	private int defaultExpiration;
 
@@ -81,24 +82,24 @@ public class ElastiCacheProperties {
 	public static class Cluster {
 
 		/**
-		 * Defines the name for the cache cluster. The name might be the physical name of the
-		 * cache cluster itself or a logical name of a cache cluster inside a stack. The caching
-		 * infrastructure will automatically retrieve the cache engine (redis or memcached) and
-		 * configured the appropriate cache driver with the cache implementation. Caches can be
-		 * used inside the application code with the
-		 * {@link org.springframework.cache.annotation.Cacheable} annotation or others referring
-		 * to this name attribute inside the
+		 * Defines the name for the cache cluster. The name might be the physical name
+		 * of the cache cluster itself or a logical name of a cache cluster inside a
+		 * stack. The caching infrastructure will automatically retrieve the cache
+		 * engine (redis or memcached) and configured the appropriate cache driver with
+		 * the cache implementation. Caches can be used inside the application code with
+		 * the {@link org.springframework.cache.annotation.Cacheable} annotation or
+		 * others referring to this name attribute inside the
 		 * {@link org.springframework.cache.annotation.Cacheable#value()} attribute.
 		 */
 		private String name;
 
 		/**
-		 * Configures the expiration time of the particular cache cluster in seconds. The
-		 * expiration time is based on the cache level and is implementation specific. Typically
-		 * this expiration time will configure the expiration of one item at the time the item is
-		 * inserted into the cache regardless of the last access. If this value is not explicitly
-		 * configured then the value of {@link ElastiCacheProperties#getDefaultExpiration()} will
-		 * be used.
+		 * Configures the expiration time of the particular cache cluster in seconds.
+		 * The expiration time is based on the cache level and is implementation
+		 * specific. Typically this expiration time will configure the expiration of one
+		 * item at the time the item is inserted into the cache regardless of the last
+		 * access. If this value is not explicitly configured then the value of
+		 * {@link ElastiCacheProperties#getDefaultExpiration()} will be used.
 		 */
 		private int expiration;
 

@@ -44,7 +44,8 @@ public class AwsCredentialsProperties {
 	private String secretKey;
 
 	/**
-	 * Configures an instance profile credentials provider with no further configuration.
+	 * Configures an instance profile credentials provider with no further
+	 * configuration.
 	 */
 	private boolean instanceProfile = false;
 

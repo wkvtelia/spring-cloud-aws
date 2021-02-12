@@ -35,9 +35,9 @@ import org.springframework.util.Assert;
 import org.springframework.util.ReflectionUtils;
 
 /**
- * {@link AmazonS3} client factory that create clients for other regions based on the
- * source client and a endpoint url. Caches clients per region to enable re-use on a
- * region base.
+ * {@link AmazonS3} client factory that create clients for other regions based
+ * on the source client and a endpoint url. Caches clients per region to enable
+ * re-use on a region base.
  *
  * @author Agim Emruli
  * @author Eddú Meléndez

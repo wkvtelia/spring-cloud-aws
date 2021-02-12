@@ -36,10 +36,11 @@ import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
 /**
- * Retrieves the instance id output value from the configured stack and exposes it via a
- * local metadata service. In addition, sets the AWS SDK internal system property for
- * overwriting the service endpoint url used by the
- * {@link com.amazonaws.util.EC2MetadataUtils} to the url of the local metadata service.
+ * Retrieves the instance id output value from the configured stack and exposes
+ * it via a local metadata service. In addition, sets the AWS SDK internal
+ * system property for overwriting the service endpoint url used by the
+ * {@link com.amazonaws.util.EC2MetadataUtils} to the url of the local metadata
+ * service.
  *
  * @author Christian Stettler
  */
@@ -171,8 +172,8 @@ public final class TestStackInstanceIdService {
 	}
 
 	/**
-	 * Source for retrieving instance id from specified output key of specified stack.
-	 * Requires specified stack to be available.
+	 * Source for retrieving instance id from specified output key of specified
+	 * stack. Requires specified stack to be available.
 	 * <p>
 	 * Useful for integration testing.
 	 * </p>

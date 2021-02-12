@@ -30,8 +30,8 @@ import org.springframework.core.io.ProtocolResolver;
 import org.springframework.core.io.ResourceLoader;
 
 /**
- * Configurer that register the {@link SimpleStorageProtocolResolver} to the resource
- * resolver to allow resolving s3 based resources in Spring.
+ * Configurer that register the {@link SimpleStorageProtocolResolver} to the
+ * resource resolver to allow resolving s3 based resources in Spring.
  *
  * @author Agim Emruli
  * @author Alain Sahli

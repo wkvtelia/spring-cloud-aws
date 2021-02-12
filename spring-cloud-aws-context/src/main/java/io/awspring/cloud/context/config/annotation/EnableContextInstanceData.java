@@ -25,10 +25,12 @@ import org.springframework.beans.factory.config.PlaceholderConfigurerSupport;
 import org.springframework.context.annotation.Import;
 
 /**
- * Enables a {@link org.springframework.core.env.PropertySource} that resolve instance
- * meta-data through the amazon meta data service that is available on EC instances.
+ * Enables a {@link org.springframework.core.env.PropertySource} that resolve
+ * instance meta-data through the amazon meta data service that is available on
+ * EC instances.
  *
- * <b>Note:</b>This annotation does not have any effect outside the EC2 environment.
+ * <b>Note:</b>This annotation does not have any effect outside the EC2
+ * environment.
  *
  * @author Agim Emruli
  * @deprecated use auto-configuration
@@ -40,16 +42,16 @@ import org.springframework.context.annotation.Import;
 public @interface EnableContextInstanceData {
 
 	/**
-	 * Allows to configure the value separator for the user data configured attributes. These
-	 * is by default the ':' character following the Spring general place holder support
-	 * {@link PlaceholderConfigurerSupport}
+	 * Allows to configure the value separator for the user data configured
+	 * attributes. These is by default the ':' character following the Spring
+	 * general place holder support {@link PlaceholderConfigurerSupport}
 	 * @return the custom configured value separator
 	 */
 	String valueSeparator() default PlaceholderConfigurerSupport.DEFAULT_VALUE_SEPARATOR;
 
 	/**
-	 * Allows to configure the attribute separator to separate multiple attributes in one
-	 * global user data string.
+	 * Allows to configure the attribute separator to separate multiple attributes
+	 * in one global user data string.
 	 * @return the custom configured attribute separator or ';' as the default
 	 */
 	String attributeSeparator() default ";";

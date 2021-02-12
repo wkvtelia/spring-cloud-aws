@@ -50,9 +50,10 @@ import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
 
 /**
- * {@link JavaMailSender} implementation that allows to send {@link MimeMessage} using the
- * Simple E-Mail Service. In contrast to {@link SimpleEmailServiceMailSender} this class
- * also allows the use of attachment and other mime parts inside mail messages.
+ * {@link JavaMailSender} implementation that allows to send {@link MimeMessage}
+ * using the Simple E-Mail Service. In contrast to
+ * {@link SimpleEmailServiceMailSender} this class also allows the use of
+ * attachment and other mime parts inside mail messages.
  *
  * @author Agim Emruli
  * @author Eddú Meléndez
@@ -77,8 +78,8 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	}
 
 	/**
-	 * Allow Map access to the JavaMail properties of this sender, with the option to add or
-	 * override specific entries.
+	 * Allow Map access to the JavaMail properties of this sender, with the option
+	 * to add or override specific entries.
 	 * <p>
 	 * Useful for specifying entries directly, for example via
 	 * "javaMailProperties[mail.from]".
@@ -93,7 +94,8 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	 * <p>
 	 * A new {@code Session} will be created with those properties.
 	 * <p>
-	 * Non-default properties in this instance will override given JavaMail properties.
+	 * Non-default properties in this instance will override given JavaMail
+	 * properties.
 	 * @param javaMailProperties java mail props
 	 */
 	public void setJavaMailProperties(Properties javaMailProperties) {
@@ -102,8 +104,8 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	}
 
 	/**
-	 * Return the JavaMail {@code Session}, lazily initializing it if hasn't been specified
-	 * explicitly.
+	 * Return the JavaMail {@code Session}, lazily initializing it if hasn't been
+	 * specified explicitly.
 	 * @return cached session or a new one from java mail properties
 	 */
 	protected Session getSession() {
@@ -116,11 +118,11 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	/**
 	 * Set the JavaMail {@code Session}, possibly pulled from JNDI.
 	 * <p>
-	 * Default is a new {@code Session} without defaults, that is completely configured via
-	 * this instance's properties.
+	 * Default is a new {@code Session} without defaults, that is completely
+	 * configured via this instance's properties.
 	 * <p>
-	 * If using a pre-configured {@code Session}, non-default properties in this instance will
-	 * override the settings in the {@code Session}.
+	 * If using a pre-configured {@code Session}, non-default properties in this
+	 * instance will override the settings in the {@code Session}.
 	 * @param session JavaMail session
 	 * @see #setJavaMailProperties
 	 */
@@ -130,8 +132,8 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	}
 
 	/**
-	 * Set the default encoding to use for {@link MimeMessage MimeMessages} created by this
-	 * instance.
+	 * Set the default encoding to use for {@link MimeMessage MimeMessages} created
+	 * by this instance.
 	 * <p>
 	 * Such an encoding will be auto-detected by {@link MimeMessageHelper}.
 	 * @param defaultEncoding default encoding for mime messages
@@ -141,17 +143,18 @@ public class SimpleEmailServiceJavaMailSender extends SimpleEmailServiceMailSend
 	}
 
 	/**
-	 * Set the default Java Activation {@link FileTypeMap} to use for {@link MimeMessage
-	 * MimeMessages} created by this instance.
+	 * Set the default Java Activation {@link FileTypeMap} to use for
+	 * {@link MimeMessage MimeMessages} created by this instance.
 	 * <p>
-	 * A {@code FileTypeMap} specified here will be autodetected by {@link MimeMessageHelper},
-	 * avoiding the need to specify the {@code FileTypeMap} for each {@code MimeMessageHelper}
-	 * instance.
+	 * A {@code FileTypeMap} specified here will be autodetected by
+	 * {@link MimeMessageHelper}, avoiding the need to specify the
+	 * {@code FileTypeMap} for each {@code MimeMessageHelper} instance.
 	 * <p>
 	 * For example, you can specify a custom instance of Spring's
-	 * {@link ConfigurableMimeFileTypeMap} here. If not explicitly specified, a default
-	 * {@code ConfigurableMimeFileTypeMap} will be used, containing an extended set of MIME
-	 * type mappings (as defined by the {@code mime.types} file contained in the Spring jar).
+	 * {@link ConfigurableMimeFileTypeMap} here. If not explicitly specified, a
+	 * default {@code ConfigurableMimeFileTypeMap} will be used, containing an
+	 * extended set of MIME type mappings (as defined by the {@code mime.types} file
+	 * contained in the Spring jar).
 	 * @param defaultFileTypeMap Java Activation file type map
 	 * @see MimeMessageHelper#setFileTypeMap
 	 */

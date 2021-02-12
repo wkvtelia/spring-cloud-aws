@@ -32,8 +32,8 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
 
 /**
- * Represents a stack name provider that automatically detects the current stack name
- * based on the amazon elastic cloud environment.
+ * Represents a stack name provider that automatically detects the current stack
+ * name based on the amazon elastic cloud environment.
  *
  * @author Christian Stettler
  * @author Agim Emruli

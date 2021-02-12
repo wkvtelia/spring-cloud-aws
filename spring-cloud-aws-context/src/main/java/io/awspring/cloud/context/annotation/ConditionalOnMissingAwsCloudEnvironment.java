@@ -25,10 +25,10 @@ import java.lang.annotation.Target;
 import org.springframework.context.annotation.Conditional;
 
 /**
- * {@link Conditional} annotation that returns true if the current JVM is not started
- * inside an AWS cloud environment. Useful for beans that should only be created if the
- * application context is bootstrapped outside the AWS environment (e.g. beans that
- * simulate AWS services for testing)
+ * {@link Conditional} annotation that returns true if the current JVM is not
+ * started inside an AWS cloud environment. Useful for beans that should only be
+ * created if the application context is bootstrapped outside the AWS
+ * environment (e.g. beans that simulate AWS services for testing)
  *
  * @author Agim Emruli
  * @author Ken Krueger

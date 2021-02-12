@@ -23,11 +23,11 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.core.task.support.ExecutorServiceAdapter;
 
 /**
- * Suppressing {@link java.util.concurrent.ExecutorService} implementation that ignores
- * {@link #shutdownNow()} calls which are made by the Amazon Webservice clients. If these
- * clients receive an externally managed
- * {@link org.springframework.core.task.TaskExecutor} this implementation suppresses the
- * calls to avoid exception during application shutdown.
+ * Suppressing {@link java.util.concurrent.ExecutorService} implementation that
+ * ignores {@link #shutdownNow()} calls which are made by the Amazon Webservice
+ * clients. If these clients receive an externally managed
+ * {@link org.springframework.core.task.TaskExecutor} this implementation
+ * suppresses the calls to avoid exception during application shutdown.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -35,9 +35,10 @@ import org.springframework.core.task.support.ExecutorServiceAdapter;
 public class ShutdownSuppressingExecutorServiceAdapter extends ExecutorServiceAdapter {
 
 	/**
-	 * Create a new SuppressingExecutorServiceAdapter, using the given target executor.
-	 * @param taskExecutor the target executor to delegate to, typically an externally managed
-	 *     one
+	 * Create a new SuppressingExecutorServiceAdapter, using the given target
+	 * executor.
+	 * @param taskExecutor the target executor to delegate to, typically an
+	 *     externally managed one
 	 */
 	public ShutdownSuppressingExecutorServiceAdapter(TaskExecutor taskExecutor) {
 		super(taskExecutor);

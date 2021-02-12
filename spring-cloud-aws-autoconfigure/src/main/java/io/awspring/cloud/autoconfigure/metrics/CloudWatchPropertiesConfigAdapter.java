@@ -21,7 +21,8 @@ import io.micrometer.cloudwatch.CloudWatchConfig;
 import org.springframework.boot.actuate.autoconfigure.metrics.export.properties.StepRegistryPropertiesConfigAdapter;
 
 /**
- * Adapter to convert {@link CloudWatchProperties} to a {@link CloudWatchConfig}.
+ * Adapter to convert {@link CloudWatchProperties} to a
+ * {@link CloudWatchConfig}.
  *
  * @author Jon Schneider
  * @author Dawid Kublik

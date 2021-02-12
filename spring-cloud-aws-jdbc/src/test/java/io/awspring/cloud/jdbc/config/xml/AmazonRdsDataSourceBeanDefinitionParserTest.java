@@ -56,7 +56,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
 /**
- * Tests for the {@link AmazonRdsDataSourceBeanDefinitionParser} bean definition parser.
+ * Tests for the {@link AmazonRdsDataSourceBeanDefinitionParser} bean definition
+ * parser.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -250,7 +251,8 @@ class AmazonRdsDataSourceBeanDefinitionParserTest {
 	}
 
 	@Test
-	// As we provide default in the schema for better code completion we should check if
+	// As we provide default in the schema for better code completion we should
+	// check if
 	// they match to the underlying pool defaults
 	void parseInternal_defaultPoolAttribute_matchesPoolConfiguration() throws Exception {
 		// Arrange

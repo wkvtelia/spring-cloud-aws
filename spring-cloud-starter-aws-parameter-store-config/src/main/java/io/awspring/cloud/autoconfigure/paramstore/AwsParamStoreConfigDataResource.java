@@ -53,7 +53,8 @@ public class AwsParamStoreConfigDataResource extends ConfigDataResource {
 	}
 
 	/**
-	 * If application startup should fail when secret cannot be loaded or does not exist.
+	 * If application startup should fail when secret cannot be loaded or does not
+	 * exist.
 	 * @return is optional
 	 */
 	public boolean isOptional() {

@@ -21,7 +21,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Simple implementation that holds statically all information for the database platform.
+ * Simple implementation that holds statically all information for the database
+ * platform.
  *
  * @author Agim Emruli
  * @since 1.0
@@ -35,8 +36,8 @@ public class StaticDatabasePlatformSupport extends MapBasedDatabasePlatformSuppo
 	private final Map<DatabaseType, String> schemeNames;
 
 	/**
-	 * Populates both the {@link #driverClassNameMappings} and {@link #schemeNames} with the
-	 * configuration information.
+	 * Populates both the {@link #driverClassNameMappings} and {@link #schemeNames}
+	 * with the configuration information.
 	 */
 	public StaticDatabasePlatformSupport() {
 		this.driverClassNameMappings = getDefaultDriverClassNameMappings();

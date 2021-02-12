@@ -1304,7 +1304,8 @@ class SimpleMessageListenerContainerTest {
 				.as("Stop time must be shorter than stopping one queue after the other").isTrue();
 	}
 
-	// This class is needed because it does not seem to work when using mockito to mock
+	// This class is needed because it does not seem to work when using mockito to
+	// mock
 	// those requests
 	private static final class MockAmazonSqsAsyncClient extends AmazonSQSBufferedAsyncClient {
 

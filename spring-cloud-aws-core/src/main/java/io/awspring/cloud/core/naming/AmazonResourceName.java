@@ -24,15 +24,16 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 /**
- * Support class which is used to parse Amazon Webservice Resource Names. Resource names
- * are unique identifiers for different type of resource inside the Amazon Webservices.
- * These resource are represented by a service and could be bound into a particular
- * region, if the service is region based. Also most of the resources will be typically
- * bound to an account if the resource is scoped ot an account.
+ * Support class which is used to parse Amazon Webservice Resource Names.
+ * Resource names are unique identifiers for different type of resource inside
+ * the Amazon Webservices. These resource are represented by a service and could
+ * be bound into a particular region, if the service is region based. Also most
+ * of the resources will be typically bound to an account if the resource is
+ * scoped ot an account.
  * <p>
  * More information on resources are available on <a href=
- * "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">the Amazon
- * Webservice Manual</a>
+ * "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">the
+ * Amazon Webservice Manual</a>
  * </p>
  *
  * @author Agim Emruli
@@ -45,14 +46,15 @@ public final class AmazonResourceName {
 	}
 
 	/*
-	 * The delimiter for the arn which delimits the different parts of the arn string
+	 * The delimiter for the arn which delimits the different parts of the arn
+	 * string
 	 */
 	private static final String RESOURCE_NAME_DELIMITER = ":";
 
 	/*
-	 * The resource type delimiter which is used on particular resources to split the name and
-	 * type. This typically the case for service which can contain nested paths (e.g. S3
-	 * Buckets, IAM groups)
+	 * The resource type delimiter which is used on particular resources to split
+	 * the name and type. This typically the case for service which can contain
+	 * nested paths (e.g. S3 Buckets, IAM groups)
 	 */
 	private static final String RESOURCE_TYPE_DELIMITER = "/";
 
@@ -133,7 +135,8 @@ public final class AmazonResourceName {
 	}
 
 	/**
-	 * Returns the partition name of the service (currently aws, aws-cn, aws-us-gov).
+	 * Returns the partition name of the service (currently aws, aws-cn,
+	 * aws-us-gov).
 	 * @return - the partition name - must start with aws
 	 */
 	public String getPartition() {
@@ -141,8 +144,9 @@ public final class AmazonResourceName {
 	}
 
 	/**
-	 * Returns the service name for this particular AmazonResourceName. The service name is a
-	 * plain string which will be one of the service from the namespace defined at <a href=
+	 * Returns the service name for this particular AmazonResourceName. The service
+	 * name is a plain string which will be one of the service from the namespace
+	 * defined at <a href=
 	 * "https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">user
 	 * manual</a>
 	 * @return - the service as a string - never be null
@@ -152,8 +156,9 @@ public final class AmazonResourceName {
 	}
 
 	/**
-	 * Returns the region to which the particular service for this object is bound. This is
-	 * one of the known regions or null if the service is globally available (e.g. Amazon S3)
+	 * Returns the region to which the particular service for this object is bound.
+	 * This is one of the known regions or null if the service is globally available
+	 * (e.g. Amazon S3)
 	 * @return - the region or null if the service is globally available
 	 */
 	public String getRegion() {
@@ -161,19 +166,22 @@ public final class AmazonResourceName {
 	}
 
 	/**
-	 * Returns the account to which the resource is assigned. This is the account id to which
-	 * the owner of the resources belongs to. If the resources does not have any owner (e.g.
-	 * solutions stacks in ElasticBeansTalk) this method will return null
-	 * @return - the account number of the resource owner or null for non assigned resources
+	 * Returns the account to which the resource is assigned. This is the account id
+	 * to which the owner of the resources belongs to. If the resources does not
+	 * have any owner (e.g. solutions stacks in ElasticBeansTalk) this method will
+	 * return null
+	 * @return - the account number of the resource owner or null for non assigned
+	 * resources
 	 */
 	public String getAccount() {
 		return this.account;
 	}
 
 	/**
-	 * Return the resource type for the resource. This is service dependent and can be an user
-	 * (for IAM) or a bucket (for S3). The resource type is never null and can be the resource
-	 * name for particular service (e.g. Amazon SQS Queue or Amazon SNS Topic)
+	 * Return the resource type for the resource. This is service dependent and can
+	 * be an user (for IAM) or a bucket (for S3). The resource type is never null
+	 * and can be the resource name for particular service (e.g. Amazon SQS Queue or
+	 * Amazon SNS Topic)
 	 * @return the type of the resource of the name of the resource itself
 	 */
 	public String getResourceType() {
@@ -181,10 +189,11 @@ public final class AmazonResourceName {
 	}
 
 	/**
-	 * Return the name of the resource inside the particular type. This can be a bucket name
-	 * for Amazon S3 or the subscriptions id for the subscription of one particular topic.
-	 * @return - the resource name or null if the resource type itself is the name of the
-	 * resource
+	 * Return the name of the resource inside the particular type. This can be a
+	 * bucket name for Amazon S3 or the subscriptions id for the subscription of one
+	 * particular topic.
+	 * @return - the resource name or null if the resource type itself is the name
+	 * of the resource
 	 */
 	public String getResourceName() {
 		return this.resourceName;

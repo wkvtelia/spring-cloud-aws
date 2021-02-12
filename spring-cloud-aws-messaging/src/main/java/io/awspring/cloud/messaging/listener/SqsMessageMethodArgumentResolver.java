@@ -23,8 +23,9 @@ import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.invocation.HandlerMethodArgumentResolver;
 
 /**
- * Resolves original SQS message object {@link com.amazonaws.services.sqs.model.Message}
- * from Spring Messaging message object {@link Message}.
+ * Resolves original SQS message object
+ * {@link com.amazonaws.services.sqs.model.Message} from Spring Messaging
+ * message object {@link Message}.
  *
  * @author Maciej Walkowiak
  */

@@ -22,10 +22,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation which is used to define certain classes / methods as runtime components.
- * Runtime components are not linked with other classes but called through a reflective
- * call. This is for instance the case for Spring components which are called through the
- * BeanFactory.
+ * Annotation which is used to define certain classes / methods as runtime
+ * components. Runtime components are not linked with other classes but called
+ * through a reflective call. This is for instance the case for Spring
+ * components which are called through the BeanFactory.
  *
  * @author Agim Emruli
  * @since 1.0
