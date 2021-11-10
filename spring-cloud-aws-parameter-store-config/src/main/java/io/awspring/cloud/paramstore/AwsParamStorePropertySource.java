@@ -71,7 +71,7 @@ public class AwsParamStorePropertySource extends EnumerablePropertySource<AWSSim
 		GetParametersByPathResult paramsResult = this.source.getParametersByPath(paramsRequest);
 		for (Parameter parameter : paramsResult.getParameters()) {
 			String key = parameter.getName().replace(this.context, "").replace('/', '.');
-			LOGGER.debug("Populating property retrieved from AWS Parameter Store: {}", key);
+			System.out.println(String.format("Populating property retrieved from AWS Parameter Store: %", key));
 			this.properties.put(key, parameter.getValue());
 		}
 		if (paramsResult.getNextToken() != null) {
