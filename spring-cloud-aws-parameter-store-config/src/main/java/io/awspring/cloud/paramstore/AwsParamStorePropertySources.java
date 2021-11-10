@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
-import org.apache.commons.logging.Log;
 
 import org.springframework.util.StringUtils;
 
@@ -32,11 +31,8 @@ public class AwsParamStorePropertySources {
 
 	private final AwsParamStoreProperties properties;
 
-	private final Log log;
-
-	public AwsParamStorePropertySources(AwsParamStoreProperties properties, Log log) {
+	public AwsParamStorePropertySources(AwsParamStoreProperties properties) {
 		this.properties = properties;
-		this.log = log;
 	}
 
 	public List<String> getAutomaticContexts(List<String> profiles) {
@@ -70,16 +66,17 @@ public class AwsParamStorePropertySources {
 
 	/**
 	 * Creates property source for given context.
-	 * @param context property source context equivalent to the parameter name
+	 *
+	 * @param context  property source context equivalent to the parameter name
 	 * @param optional if creating context should fail with exception if parameter cannot
-	 * be loaded
-	 * @param client System Manager Management client
+	 *                 be loaded
+	 * @param client   System Manager Management client
 	 * @return a property source or null if parameter could not be loaded and optional is
 	 * set to true
 	 */
 	public AwsParamStorePropertySource createPropertySource(String context, boolean optional,
-			AWSSimpleSystemsManagement client) {
-		log.info("Loading property from AWS Parameter Store with name: " + context + ", optional: " + optional);
+															AWSSimpleSystemsManagement client) {
+		System.out.println("******** Loading property from AWS Parameter Store with name: " + context + ", optional: " + optional);
 		try {
 			AwsParamStorePropertySource propertySource = new AwsParamStorePropertySource(context, client);
 			propertySource.init();
@@ -91,7 +88,7 @@ public class AwsParamStorePropertySources {
 				throw new AwsParameterPropertySourceNotFoundException(e);
 			}
 			else {
-				log.warn("Unable to load AWS parameter from " + context + ". " + e.getMessage());
+				System.out.println("******** Unable to load AWS parameter from " + context + ". " + e.getMessage());
 			}
 		}
 		return null;

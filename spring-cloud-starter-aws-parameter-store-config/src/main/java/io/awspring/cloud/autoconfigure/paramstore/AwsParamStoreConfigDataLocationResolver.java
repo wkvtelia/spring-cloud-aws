@@ -16,29 +16,22 @@
 
 package io.awspring.cloud.autoconfigure.paramstore;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
 import io.awspring.cloud.paramstore.AwsParamStoreProperties;
 import io.awspring.cloud.paramstore.AwsParamStorePropertySources;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import org.springframework.boot.BootstrapContext;
 import org.springframework.boot.BootstrapRegistry;
 import org.springframework.boot.ConfigurableBootstrapContext;
-import org.springframework.boot.context.config.ConfigDataLocation;
-import org.springframework.boot.context.config.ConfigDataLocationNotFoundException;
-import org.springframework.boot.context.config.ConfigDataLocationResolver;
-import org.springframework.boot.context.config.ConfigDataLocationResolverContext;
-import org.springframework.boot.context.config.Profiles;
+import org.springframework.boot.context.config.*;
 import org.springframework.boot.context.properties.bind.Bindable;
 import org.springframework.boot.context.properties.bind.Binder;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.util.StringUtils;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Eddú Meléndez
@@ -52,8 +45,6 @@ public class AwsParamStoreConfigDataLocationResolver
 	 * AWS ParameterStore Config Data prefix.
 	 */
 	public static final String PREFIX = "aws-parameterstore:";
-
-	private final Log log = LogFactory.getLog(AwsParamStoreConfigDataLocationResolver.class);
 
 	@Override
 	public boolean isResolvable(ConfigDataLocationResolverContext context, ConfigDataLocation location) {
@@ -80,7 +71,7 @@ public class AwsParamStoreConfigDataLocationResolver
 
 		AwsParamStoreProperties properties = loadConfigProperties(resolverContext.getBinder());
 
-		AwsParamStorePropertySources sources = new AwsParamStorePropertySources(properties, log);
+		AwsParamStorePropertySources sources = new AwsParamStorePropertySources(properties);
 
 		List<String> contexts = location.getValue().equals(PREFIX)
 				? sources.getAutomaticContexts(profiles.getAccepted())

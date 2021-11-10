@@ -31,6 +31,7 @@ public class AwsParamStoreValidationAnalyzer extends AbstractFailureAnalyzer<Val
 
 	@Override
 	protected FailureAnalysis analyze(Throwable rootFailure, ValidationException cause) {
+		System.out.println(String.format("Validation failed for field: %s, %s", cause.getField(), cause.getMessage()));
 		return new FailureAnalysis("Validation failed for field: " + cause.getField(), cause.getMessage(), cause);
 	}
 

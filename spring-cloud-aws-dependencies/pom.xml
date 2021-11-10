@@ -27,7 +27,7 @@
 	</parent>
 	<groupId>io.awspring.cloud</groupId>
 	<artifactId>spring-cloud-aws-dependencies</artifactId>
-	<version>2.3.2</version>
+	<version>2.3.4-cpa</version>
 	<packaging>pom</packaging>
 	<name>Spring Cloud AWS Dependencies</name>
 	<description>Spring Cloud AWS Dependencies</description>
@@ -237,10 +237,13 @@
 		</profile>
 	</profiles>
 
+
+
 	<distributionManagement>
 		<repository>
-			<id>ossrh-awspring</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>cpa-cpa-libs</id>
+			<name>cpa-cpa-libs</name>
+			<url>https://cpa-358107645737.d.codeartifact.eu-west-1.amazonaws.com/maven/cpa-libs/</url>
 		</repository>
 	</distributionManagement>
 

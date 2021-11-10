@@ -23,8 +23,6 @@ import java.util.List;
 import java.util.Set;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 import org.springframework.cloud.bootstrap.config.PropertySourceLocator;
 import org.springframework.core.env.CompositePropertySource;
@@ -53,8 +51,6 @@ public class AwsParamStorePropertySourceLocator implements PropertySourceLocator
 
 	private final Set<String> contexts = new LinkedHashSet<>();
 
-	private Log logger = LogFactory.getLog(getClass());
-
 	public AwsParamStorePropertySourceLocator(AWSSimpleSystemsManagement ssmClient,
 			AwsParamStoreProperties properties) {
 		this.ssmClient = ssmClient;
@@ -73,7 +69,7 @@ public class AwsParamStorePropertySourceLocator implements PropertySourceLocator
 
 		ConfigurableEnvironment env = (ConfigurableEnvironment) environment;
 
-		AwsParamStorePropertySources sources = new AwsParamStorePropertySources(this.properties, this.logger);
+		AwsParamStorePropertySources sources = new AwsParamStorePropertySources(this.properties);
 
 		List<String> profiles = Arrays.asList(env.getActiveProfiles());
 		this.contexts.addAll(sources.getAutomaticContexts(profiles));

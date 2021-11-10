@@ -28,7 +28,7 @@
 
 	<groupId>io.awspring.cloud</groupId>
 	<artifactId>spring-cloud-aws</artifactId>
-	<version>2.3.2</version>
+	<version>2.3.4-cpa</version>
 	<packaging>pom</packaging>
 	<name>Spring Cloud AWS</name>
 	<description>Spring Cloud AWS</description>
@@ -49,7 +49,6 @@
 		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
 		<javax.activation.version>1.2.0</javax.activation.version>
 		<spring-cloud-commons.version>3.0.0</spring-cloud-commons.version>
-		<spring-javaformat.version>0.0.25</spring-javaformat.version>
 	</properties>
 
 	<modules>
@@ -160,23 +159,6 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>io.spring.javaformat</groupId>
-				<artifactId>spring-javaformat-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<inherited>true</inherited>
-						<goals>
-							<goal>validate</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>3.2.0</version>
 				<configuration>
@@ -193,15 +175,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<reporting>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</reporting>
 
 	<profiles>
 		<profile>
@@ -323,10 +296,12 @@
 		</profile>
 	</profiles>
 
+
 	<distributionManagement>
 		<repository>
-			<id>ossrh-awspring</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>cpa-cpa-libs</id>
+			<name>cpa-cpa-libs</name>
+			<url>https://cpa-358107645737.d.codeartifact.eu-west-1.amazonaws.com/maven/cpa-libs/</url>
 		</repository>
 	</distributionManagement>
 
